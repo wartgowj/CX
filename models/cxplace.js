@@ -1,13 +1,20 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// const bookSchema = new Schema({
-//   title: { type: String, required: true },
-//   author: { type: String, required: true },
-//   synopsis: String,
-//   date: { type: Date, default: Date.now }
-// });
+const cxplaceSchema = new Schema({
+    name: { type: String, required: true },
+    address: { type: String, required: true },
+    lat: { type: String, required: true },
+    lng: { type: String, required: true },
+    phone: { type: String, required: true },
+    commision: { type: String, required: true },
+    buy: { type: String, required: true },
+    sell: { type: String, required: true },
+    hours: { type: String, required: true },
+    image: { type: String, required: true },
+    date: { type: Date, default: Date.now }
+});
 
-// const Book = mongoose.model("Book", bookSchema);
+const Cxplace = mongoose.model("Cxplace", cxplaceSchema);
 
-module.exports = Book;
+module.exports = Cxplace;
