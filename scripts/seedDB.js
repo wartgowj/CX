@@ -65,7 +65,7 @@ const cxplaceSeed = [
     sell: "17.29",
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg,
-    comments: ["test1", "test2"]		
+    comments: ["test1", "test2"],		
     date: new Date(Date.now())
   },
   {
