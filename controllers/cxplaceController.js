@@ -1,23 +1,23 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the cxplacesController
 module.exports = {
   findAll: function(req, res) {
-    db.cxplace
+    db.Cxplace
       .find(req.query)
-      .sort({ buy: -1})
+      .sort({ buy: 1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.cxplace
+    db.Cxplace
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   
   update: function(req, res) {
-    db.cxplace
+    db.Cxplace
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
