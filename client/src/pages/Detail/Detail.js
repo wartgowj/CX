@@ -16,7 +16,7 @@ class Detail extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
         
               <h1>
                 {this.state.cxplace.name}
@@ -32,8 +32,8 @@ class Detail extends Component {
 
               </p>
             
-            <Link to="/">← Back to Authors</Link>
-      </Container>
+            <Link to="/">← Back to Home/Link>
+      </div>
     );
   }
 }
