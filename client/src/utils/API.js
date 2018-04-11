@@ -10,6 +10,9 @@ export default {
     // Gets the book with the given id
     getCxplace: function (id) {
         return axios.get("/api/cxplaces/" + id);
+    },
+    updateCxplace: function (id) {
+        return axios.put("/api/cxplaces/" + id);
     }
     //FUTURE ADD-ONS: 
     // // Deletes the book with the given id
