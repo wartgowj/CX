@@ -4,13 +4,14 @@ export default {
 //Functions that get/put/post from/to the database
 
 
-    // getBooks: function () {
-    //     return axios.get("/api/books");
-    // },
-    // // Gets the book with the given id
-    // getBook: function (id) {
-    //     return axios.get("/api/books/" + id);
-    // },
+    getCxplaces: function () {
+        return axios.get("/api/cxplaces");
+    },
+    // Gets the book with the given id
+    getCxplace: function (id) {
+        return axios.get("/api/cxplaces/" + id);
+    }
+    //FUTURE ADD-ONS: 
     // // Deletes the book with the given id
     // deleteBook: function (id) {
     //     return axios.delete("/api/books/" + id);
