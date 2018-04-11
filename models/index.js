@@ -1,3 +1,4 @@
 module.exports = {
-   Cxplace: require("./cxplace")
+   Cxplace: require("./cxplace"),
+   User: require("./user")
 };

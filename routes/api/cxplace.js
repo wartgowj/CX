@@ -1,16 +1,22 @@
 const router = require("express").Router();
-// const booksController = require("../../controllers/booksController");
+const cxplacesController = require("../../controllers/cxplaceController");
 
-// Matches with "/api/books"
+// Matches with "/api/cxplaces"
 router.route("/")
-  // .get(booksController.findAll)
-  // .post(booksController.create);
+  .get(cxplacesController.findAll)
+  
 
-// Matches with "/api/books/:id"
+// Matches with "/api/cxplaces/:id"
 router
   .route("/:id")
-  // .get(booksController.findById)
-  // .put(booksController.update)
-  // .delete(booksController.remove);
+  .get(cxplacesController.findById)
+  .put(cxplacesController.update)
+
 
 module.exports = router;
+
+
+//FUTURE ADD-ONS: 
+//We'd like to create admin routes that allow an admin to add or remove a cxplace
+// .delete(cxplacesController.remove);
+// .post(cxplacesController.create);
