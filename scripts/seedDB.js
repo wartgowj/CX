@@ -36,7 +36,7 @@ const cxplaceSeed = [
     buy: "18.36",
     sell: "18.18",
     hours: "Monday to Sunday, 8:00AM to 7:00PM",
-    image: "http://gmt.labfintech.com.br/wp-content/uploads/2017/10/logo-gmt-1.png",
+    image: "http://www.coosanjer.com.gt/wp-content/uploads/2017/02/Golden-Money-green-logo-small.jpg",
     comments:["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -50,7 +50,7 @@ const cxplaceSeed = [
     buy: "18.35",
     sell: "18.20",
     hours: "Monday to Friday, 9:00AM to 5:00PM",
-    image: "https://s3-media3.fl.yelpcdn.com/bphoto/OLO_IztFGBG35uwuRIvMiA/o.jpg",
+    image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -64,8 +64,8 @@ const cxplaceSeed = [
     buy: "17.59",
     sell: "17.29",
     hours: "Monday to Friday, 7:00AM to 4:00PM",
-    image: "https://i1.ypcdn.com/blob/d4ee392e932f485be3a326393b2e3a92fbcfe2a9_640.jpg",
-    comments: ["test1", "test2"],
+    image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
+    comments: ["test1", "test2"],		
     date: new Date(Date.now())
   },
   {
@@ -78,7 +78,7 @@ const cxplaceSeed = [
     buy: "17.60",
     sell: "17.48",
     hours: "Monday to Friday, 7:00AM to 4:00PM",
-    image: "https://s3-media3.fl.yelpcdn.com/bphoto/pbU1V9apQ2lrTY5dDM83mw/o.jpg",
+    image: "http://mallsmexico.com/imagenes/2016/02/23203_Intercam.jpg",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -92,7 +92,7 @@ const cxplaceSeed = [
     buy: "17.60",
     sell: "17.50",
     hours: "Monday to Friday, 7:00AM to 4:00PM",
-    image: "https://s3-media2.fl.yelpcdn.com/bphoto/FBlUQtLZ2ZVfQzIdVbedlQ/o.jpg",
+    image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -106,7 +106,7 @@ const cxplaceSeed = [
     buy: "17.80",
     sell: "17.61",
     hours: "Open 24 Hours",
-    image: "https://s3-media2.fl.yelpcdn.com/bphoto/t7UQxdRJSR-nZDGJtDHZ3Q/o.jpg",
+    image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -120,7 +120,7 @@ const cxplaceSeed = [
     buy: "16.77",
     sell: "16.77",
     hours: "Monday to Friday, 10:00AM to 9:00PM",
-    image: "https://s3-media3.fl.yelpcdn.com/bphoto/6OrvTByfx535-arHeDn7Gw/o.jpg",
+    image: "ttps://media.glassdoor.com/sqll/751786/currency-exchange-international-squarelogo-1429768257677.png",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -134,7 +134,7 @@ const cxplaceSeed = [
     buy: "17.40",
     sell: "17.30",
     hours: "Monday to Sunday, 7:30AM to 7:30PM",
-    image: "http://i44.photobucket.com/albums/f20/eylgm/Screen%20Shot%202018-04-07%20at%2011.53.05%20AM_zpsgaoep7ub.png",
+    image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -148,7 +148,7 @@ const cxplaceSeed = [
     buy: "17.50",
     sell: "17.45",
     hours: "Monday to Sunday, 9:00AM to 8:00PM",
-    image: "http://i44.photobucket.com/albums/f20/eylgm/Screen%20Shot%202018-04-07%20at%2012.08.02%20PM_zps9nbzo9vd.png",
+    image: "https://www.expresspawn.com/images/logo.png",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -162,7 +162,7 @@ const cxplaceSeed = [
     buy: "17.57",
     sell: "17.50",
     hours: "Monday to Sunday, 9:00AM to 8:00PM",
-    image: "https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/19105904_1478308412190904_5765924367937144438_n.jpg?_nc_cat=0&oh=56130afa42e74288b118c0130e07a59d&oe=5B2DBD83",
+    image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -176,7 +176,7 @@ const cxplaceSeed = [
     buy: "18.31",
     sell: "18.25",
     hours: "Monday to Friday, 7:00AM to 4:00PM",
-    image: "https://s3-media3.fl.yelpcdn.com/bphoto/1ioEQkDJXgd981zv9cq5Ug/o.jpg",
+    image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -239,4 +239,5 @@ db.User
   .catch(err => {
     console.error(err);
     process.exit(1);
+  
   });
