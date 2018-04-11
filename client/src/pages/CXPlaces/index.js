@@ -1,1 +1,1 @@
-export { default } from "./Books.js";
+export { default } from "./CXPlaces.js";
