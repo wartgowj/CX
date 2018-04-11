@@ -32,7 +32,7 @@ class Detail extends Component {
 
               </p>
             
-            <Link to="/">← Back to Home/Link>
+            <Link to="/">← Back to Home</Link>
       </div>
     );
   }
