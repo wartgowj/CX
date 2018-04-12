@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 
+
 class CXPlaces extends Component {
   state = {
     cxplaces: []
@@ -24,8 +25,12 @@ class CXPlaces extends Component {
       <div>
         <ul>
           {
-            this.state.cxplaces.map(function(place){
-              return <li data-id="place._id">{place.name} {place.buy} {place.sell}</li>
+            this.state.cxplaces.map(function(cxplace){
+              return <li key={cxplace._id}>
+                      <Link to={"/cxplaces/" + cxplace._id}>
+                      {cxplace.name} {cxplace.buy} {cxplace.sell}
+                      </Link>
+                      </li>
             })
           }
         </ul>

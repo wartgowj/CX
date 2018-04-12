@@ -120,7 +120,7 @@ const cxplaceSeed = [
     buy: "16.77",
     sell: "16.77",
     hours: "Monday to Friday, 10:00AM to 9:00PM",
-    image: "ttps://media.glassdoor.com/sqll/751786/currency-exchange-international-squarelogo-1429768257677.png",
+    image: "https://media.glassdoor.com/sqll/751786/currency-exchange-international-squarelogo-1429768257677.png",
     comments: ["test1", "test2"],
     date: new Date(Date.now())
   },
@@ -199,31 +199,31 @@ const userSeed = [
   {
     username: "jaime",
     password: "12345",
-    pic: "test",
+    pic: "https://avatars1.githubusercontent.com/u/30250518?s=400&v=4",
     date: new Date(Date.now())
   },
   {
     username: "elma",
     password: "12345",
-    pic: "test",
+    pic: "https://avatars2.githubusercontent.com/u/31785140?s=400&v=4",
     date: new Date(Date.now())
   },
   {
     username: "jens",
     password: "12345",
-    pic: "test",
+    pic: "https://avatars2.githubusercontent.com/u/35786996?s=400&v=4",
     date: new Date(Date.now())
   },
   {
     username: "allan",
     password: "12345",
-    pic: "test",
+    pic: "https://avatars1.githubusercontent.com/u/32474234?s=460&v=4",
     date: new Date(Date.now())
   },
   {
     username: "tom",
     password: "12345",
-    pic: "test",
+    pic: "https://avatars0.githubusercontent.com/u/31419653?s=400&v=4",
     date: new Date(Date.now())
   },
 ];
