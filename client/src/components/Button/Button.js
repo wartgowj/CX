@@ -4,9 +4,9 @@ import "./Button.css";
 
 const Button = () => (
   <div>
-    <div class="container">
+    <div className="container">
       <div>
-        <button class="material-bubble">Find Exchanges</button>
+        <button className="material-bubble">Find Rates</button>
       </div>
     </div>
   </div>
