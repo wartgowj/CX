@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Button from "./components/Button";
+import Header from "./components/Header";
+
 
 
 //import pages here: 
@@ -15,6 +17,7 @@ const App = () => (
   <Router>
     <div>
       <Nav></Nav>
+      <Header></Header>
       <Button></Button>
       <Switch>
         <Route exact path="/" component={Home}/>

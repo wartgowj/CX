@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 0vh;
   width: 100vw;
   text-align: center;
 }
@@ -109,7 +109,7 @@ button::after, button::before {
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 200px;
   height: 200px;
   background-color: #85bb65;
   border-color: transparent;

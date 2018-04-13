@@ -15,7 +15,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: block;
 }
 .style__inverse___1SzHV.style__transparent___1YBfK .style__header___fS1Pf {
-    background-color: rgba(255, 255, 255, .1);
+    background-color: rgba(0, 0, 0, 0.03);
 }
 .style__transparent___1YBfK .style__header___fS1Pf {
     background-color: transparent;
@@ -114,14 +114,16 @@ a {
 a {
     background: 0 0;
 }
-
+a.signup:hover{
+    color:steelblue;
+}
 .signup, .spliter {
     display: inline-block;
 }
 .spliter {
     display: none;
     vertical-align: middle;
-    background-color: #d0cccc;
+    background-color: black;
     height: 35px;
     width: 2px;
     margin-left: 16px;
@@ -141,7 +143,7 @@ a {
     margin-left: 1rem;
 }
 .style__button___2D0xv.style__buttonInverse___211ps {
-    color: white;
+    color: black;
 }
 
 .style__loginButton___2o20s {
@@ -184,8 +186,8 @@ a {
     border: 1px solid #4a4a4a;
 }
 .style__inverse___1SzHV .style__loginButton___2o20s:hover {
-    color: #052530;
-    background-color: white;
+    color: white;
+    background-color: steelblue;
 }
 
 
@@ -283,7 +285,7 @@ a {
     text-transform: uppercase;
 }
 .style__inverse___1SzHV .signup {
-    color: white;
+    color: black;
 }
 a:hover {
     color: #1e70bf;
@@ -321,7 +323,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     min-width: 320px;
-    background: grey;
+    background: whitesmoke;
     font-family: 'Open Sans','Helvetica Neue',Arial,Helvetica,sans-serif;
     font-size: 14px;
     line-height: 1.4285em;
