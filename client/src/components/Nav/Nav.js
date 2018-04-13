@@ -6,7 +6,7 @@ const Nav = () => (
   <div className="style__header___fS1Pf">
     
     <a href="/">
-      <img className="style__logo___p5nsH" src="../images/logo.png" alt="logo"/>
+      <img className="style__logo___p5nsH" src={require("./logo.png")} alt="logo"/>
     </a>
     <span className="style__right___memgl">
       <span>
