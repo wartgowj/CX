@@ -3340,6 +3340,12 @@ htmlparser2@~3.3.0:
     domutils "1.1"
     readable-stream "1.0"
 
+http-agent@*:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/http-agent/-/http-agent-0.1.2.tgz#aaacd633c87e5ab42ed4f90827a1a5f1e2bac4b8"
+  dependencies:
+    request "1.9.x"
+
 http-deceiver@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/http-deceiver/-/http-deceiver-1.2.7.tgz#fa7168944ab9a519d337cb0bec7284dc3e723d87"
@@ -4612,6 +4618,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.1, mkdirp@~0.5.0, mkdi
   dependencies:
     minimist "0.0.8"
 
+money@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/money/-/money-0.2.0.tgz#7eada2df1009df935fa18d4fb1d620ddacce02c2"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -4882,6 +4892,12 @@ onetime@^2.0.0:
   resolved "https://registry.yarnpkg.com/onetime/-/onetime-2.0.1.tgz#067428230fd67443b2794b22bba528b6867962d4"
   dependencies:
     mimic-fn "^1.0.0"
+
+open-exchange-rates@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/open-exchange-rates/-/open-exchange-rates-0.3.0.tgz#00a0f22e8a06945f60615c25656cd765fd48316b"
+  dependencies:
+    http-agent "*"
 
 opn@5.1.0:
   version "5.1.0"
@@ -5918,6 +5934,10 @@ repeating@^2.0.0:
   resolved "https://registry.yarnpkg.com/repeating/-/repeating-2.0.1.tgz#5214c53a926d3552707527fbab415dbc08d06dda"
   dependencies:
     is-finite "^1.0.0"
+
+request@1.9.x:
+  version "1.9.9"
+  resolved "https://registry.yarnpkg.com/request/-/request-1.9.9.tgz#af231fe87e3725a5db46ff74833f3aa0ebfd9151"
 
 request@2.81.0:
   version "2.81.0"
