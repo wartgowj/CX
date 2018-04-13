@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
+import Button from "./components/Button";
 
 
 //import pages here: 
@@ -13,7 +14,8 @@ import Home from "./pages/Home"
 const App = () => (
   <Router>
     <div>
-      <Nav />
+      <Nav></Nav>
+      <Button></Button>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/cxplaces" component={CXPlaces}/>
