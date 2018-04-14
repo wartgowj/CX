@@ -17,7 +17,7 @@ const Nav = () => (
         <span className="spliter"></span>
       </span>
       <span>
-        <a tabindex="0" href="" className="signup">Sign Up</a>
+        <a tabindex="0" href="/signup" className="signup">Sign Up</a>
         <a role="link" className="style__button___2D0xv style__loginButton___2o20s style__buttonBordered___39qfp style__buttonInverse___211ps style__buttonRounded___16YQP" href="/login" tabindex="0">Log in</a>
       </span>
     </span>

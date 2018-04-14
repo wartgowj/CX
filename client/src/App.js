@@ -6,6 +6,8 @@ import { GoogleApiWrapper } from "google-maps-react";
 import Detail from "./pages/Detail";
 import CXPlaces from "./pages/CXPlaces";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Map from "./components/Map"
 
 
@@ -21,9 +23,11 @@ class App extends Component {
       <Nav />
       <Switch>
         <Route exact path="/" component={Home}/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/signup" component={Signup}/>
         <Route exact path="/cxplaces" component={CXPlaces}/>
         <Route exact path="/cxplaces/:id" component={Detail}/>
-        <Route exact path="/map" render={(props) => ( <Map google={this.props.google}/> )} />
+        <Route exact path="/map" render={(props) => ( <Map google={this.props.google}/> )} /> 
       </Switch>
     </div>
    </Router>
