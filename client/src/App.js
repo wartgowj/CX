@@ -20,10 +20,9 @@ class App extends Component {
   <Router>
     <div>
       
-      <Nav></Nav>
-      <RatesDisplay />
-      <Header></Header>
-      <Button></Button>
+      <Nav />
+      <Header />
+      <Button />
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/cxplaces" component={CXPlaces}/>

@@ -1,6 +1,14 @@
 .style__navbar___n7Lsv.style__inverse___1SzHV.style__transparent___1YBfK.style__sticky___3fVnd {
     border-bottom: none;
 }
+
+.ratesDisplay{
+    width: 39rem;
+    color: black;
+    font-weight: 900;
+    font-size: 18px;
+    padding-left: 10px;
+}
 .style__navbar___n7Lsv.style__sticky___3fVnd {
     top: 0;
     position: -webkit-sticky;
