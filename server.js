@@ -5,13 +5,22 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Configure body parser for AJAX requests
+app.use(express.static("client/build"));
+
+app.use(require('cookie-parser')());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+const passport = require('./config/passport');
+
+app.use(passport.initialize());
+
+// Configure body parser for AJAX requests
 // Serve up static assets
-app.use(express.static("client/build"));
 // Add routes, both API and view
-app.use(routes);
+app.use(routes); 
+
+
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;

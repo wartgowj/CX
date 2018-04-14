@@ -65,6 +65,7 @@ export default class Signup extends Component {
             Signup
           </Button>
         </form>
+        <button><a href="http://localhost:3001/auth/google">Sign In with Google</a></button>
       </div>
     );
   }
