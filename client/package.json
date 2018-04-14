@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.16.2",
+    "google-maps-react": "^2.0.0",
     "money": "^0.2.0",
     "open-exchange-rates": "^0.3.0",
     "react": "^16.0.0",
