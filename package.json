@@ -23,6 +23,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "google-maps-react": "^2.0.0",
-    "mongoose": "^4.11.7"
+    "mongoose": "^4.11.7",
+    "passport-google-oauth": "^1.0.0"
   }
 }
