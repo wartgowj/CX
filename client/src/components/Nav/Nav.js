@@ -1,11 +1,14 @@
 import React from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
+import RatesDisplay from "../RatesDisplay";
 
 const Nav = () => (
 <nav className="style__navbar___n7Lsv style__sticky___3fVnd style__transparent___1YBfK style__inverse___1SzHV">
   <div className="style__header___fS1Pf">
-    
+    <div className="ratesDisplay">
+      <RatesDisplay />
+    </div>
     <a href="/">
       <img className="style__logo___p5nsH" src={require("./logo.png")} alt="logo"/>
     </a>
@@ -26,7 +29,7 @@ const Nav = () => (
 export default Nav;
 // Hamburger Side Nav Commented out
 // <div className="block" tabindex="0" role="button" className="style__icon___1NLH2 style__hamburger___regNk">
-      // <span></span>
-      // <span></span>
-      // <span></span>
-    // </div>
+//       <span></span>
+//       <span></span>
+//       <span></span>
+//     </div>
