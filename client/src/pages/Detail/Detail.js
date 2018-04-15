@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Modal from "../../components/Modal";
 
 class Detail extends Component {
   state = {
-    cxplace: {}
+    cxplace: {},
+    isModalOpen: false
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
@@ -34,16 +36,16 @@ class Detail extends Component {
       this.setState({
         cxplace: {
           buy: this.state.buy,
-          sell: this.state.sell,
-          comments: this.state.comments
-        }
+          sell: this.state.sell
+          // comments: this.state.comments,
+        },
+        isModalOpen: false
       })
-
 
       API.updateCxplace(this.props.match.params.id, {
         buy: this.state.buy,
-        sell: this.state.sell,
-        comments: this.state.comments
+        sell: this.state.sell
+        // comments: this.state.comments
       })
         .then(res => this.getPlace())
         .catch(err => console.log(err));
@@ -59,47 +61,63 @@ class Detail extends Component {
               </h1>
               <img src={this.state.cxplace.image} alt="logo"/>
               <p>
-              <h3>
               {this.state.cxplace.buy}
-              {this.state.cxplace.sell}
-              {this.state.cxplace.address}
-              {this.state.cxplace.phone}
-              {this.state.cxplace.hours}
-              {this.state.cxplace.comments}
-              </h3>
               </p>
-              <form>
-              <Input
-                // value={this.state.buy}
-                onChange={this.handleInputChange}
-                name="buy"
-                placeholder="Buy Rate (required)"
-              />
-              <Input
-                // value={this.state.sell}
-                onChange={this.handleInputChange}
-                name="sell"
-                placeholder="Sell Rate (required)"
-              />
-              <TextArea
-                // value={this.state.comments}
-                onChange={this.handleInputChange}
-                name="comments"
-                placeholder="Comments (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.cxplace.buy && this.state.cxplace.sell)}
-                onClick={this.handleFormSubmit}
-              >
-                Update
-              </FormBtn>
-            </form>
-
+              <p>
+              {this.state.cxplace.sell}
+              </p>
+              <p>
+              {this.state.cxplace.address}
+              </p>
+              <p>
+              {this.state.cxplace.phone}
+              </p>
+              <p>
+              {this.state.cxplace.hours}
+              </p>
+              <p>
+              {this.state.cxplace.comments}
+              </p>
+              <div>
+                <button onClick={() => this.openModal()}>Update Rates</button>
+                  <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+                    <h1>Update Rates</h1>
+                      <form>
+                          <Input
+                            onChange={this.handleInputChange}
+                            name="buy"
+                            placeholder="Buy Rate (required)"
+                          />
+                          <Input
+                            onChange={this.handleInputChange}
+                            name="sell"
+                            placeholder="Sell Rate (required)"
+                          />
+                          <FormBtn
+                            disabled={!(this.state.buy && this.state.sell)}
+                            onClick={this.handleFormSubmit}
+                          > Update                            
+                          </FormBtn>
+                      </form>                        
+                  </Modal>
+              </div>
+              <br />
+              <div>
+                <button>Add Comments</button>
+              </div>
+        
             <Link to="/">← Back to Home</Link>
-
       </div>
     );
   }
+  openModal() {
+    this.setState({ isModalOpen: true })
+  }
+
+  closeModal() {
+    this.setState({ isModalOpen: false })
+  }  
 }
+
 
 export default Detail;
