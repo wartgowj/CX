@@ -1,16 +1,26 @@
 import React, {Component} from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Signup.css"
+import API from "../../utils/API.js"
 
 export default class Signup extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: "",
-      password: "",
-      passwordCheck: ""
+      local: {
+        username: "",
+        password: "",
+        passwordCheck: "",
+        pic: {
+          type: ""
+        }
+      }
     };
+  }
+
+  componentDidMount() {
+    console.log(this.state);
   }
 
   validateForm() {
@@ -18,14 +28,23 @@ export default class Signup extends Component {
   }
 
   handleChange = event => {
+    const { name, value } = event.target;
     this.setState({
-      [event.target.id]: event.target.value
+      [name]: value
     });
-  }
+  };
 
   handleSubmit = event => {
     event.preventDefault();
-  }
+      API.postUser({ 
+        local: {
+          username: this.state.username, password: this.state.password
+        }  
+      })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+
+  };
 
   render() {
     return (
@@ -35,7 +54,7 @@ export default class Signup extends Component {
             <ControlLabel>Username</ControlLabel>
             <FormControl
               autoFocus
-              type="username"
+              name="username"
               value={this.state.username}
               onChange={this.handleChange}
             />
@@ -45,7 +64,7 @@ export default class Signup extends Component {
             <FormControl
               value={this.state.password}
               onChange={this.handleChange}
-              type="password"
+              name="password"
             />
           </FormGroup>
           <FormGroup controlId="passwordCheck" bsSize="large">
@@ -53,15 +72,14 @@ export default class Signup extends Component {
             <FormControl
               value={this.state.passwordCheck}
               onChange={this.handleChange}
-              type="passwordCheck"
+              name="passwordCheck"
             />
           </FormGroup>
           <Button
             block
             bsSize="large"
-            disabled={!this.validateForm()}
-            type="submit"
-          >
+            disabled={!this.validateForm}
+            type="submit">
             Signup
           </Button>
         </form>

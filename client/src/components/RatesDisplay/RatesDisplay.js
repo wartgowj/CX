@@ -13,13 +13,15 @@ class RatesDisplay extends Component {
     }
 
     loadRates = () => {
-        ExchangeRates.getRates()
-            .then(results => {
-                return results.json();
-            }).then(data => {
-                console.log(data)
-                this.setState({ pesoRate: data.rates.MXN})
-            })
+        // ExchangeRates.getRates()
+        //     .then(results => {
+        //         return results.json();
+        //     }).then(data => {
+        //         console.log(data)
+        //         this.setState({ pesoRate: data.rates.MXN})
+        //     })
+
+        this.setState({pesoRate: 18.00})
     };
 
     render() {

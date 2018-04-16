@@ -17,8 +17,8 @@ export default {
     getUsers: function () {
         return axios.get("/api/users")
     },
-    postUser: function () {
-        return axios.post("/api/users")
+    postUser: function (userData) {
+        return axios.post("/api/users/signup", userData)
     },
     getUser: function (id) {
         return axios.post("/api/users/" + id)
@@ -27,8 +27,7 @@ export default {
     deleteUser: function (id) {
         return axios.delete("/api/users/" + id)
     }
-
-
+    
     //FUTURE ADD-ONS: 
     // // Deletes the book with the given id
     // deleteBook: function (id) {
