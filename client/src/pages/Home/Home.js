@@ -13,27 +13,27 @@ class Home extends Component {
         const { isAuthenticated } = this.props.auth;
         return (
             <div className="container">
-                {
+                {/* {
                     isAuthenticated() && (
-                        <div>
-                        <Header />
-                        <Link to={"/cxplaces/"}>
-                        <Button />
-                        </Link>
-                        </div>
+                        // <div>
+                        // <Header />
+                        // <Link to={"/cxplaces/"}>
+                        // <Button />
+                        // </Link>
+                        // </div>
 
                     )
                 }
                 {
                     !isAuthenticated() && (
-                        <div>
-                        <Header />
-                        <Link to={"/cxplaces/"}>
-                            <Button />
-                        </Link>
-                        </div>
+                        // <div>
+                        // <Header />
+                        // <Link to={"/cxplaces/"}>
+                        //     <Button />
+                        // </Link>
+                        // </div>
                     )
-                }
+                } */}
             </div>
         );
     }

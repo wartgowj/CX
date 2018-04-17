@@ -5,13 +5,12 @@ import Home from './pages/Home';
 import Callback from './components/Callback/Callback';
 import Auth from './components/Auth/Auth';
 import history from './utils/history';
-// import { GoogleApiWrapper } from "google-maps-react";
 
 
 //import pages here: 
 import Detail from "./pages/Detail";
 import CXPlaces from "./pages/CXPlaces";
-// import Map from "./components/Map"
+// import Map from "./componenta/Map"
 
 
 const auth = new Auth();
@@ -27,7 +26,7 @@ export const makeMainRoutes = () => {
       <Router history={history}>
         <div>
           <Route path="/" render={(props) => <App auth={auth} {...props} />} />
-          <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
+          {/* <Route path="/home" render={(props) => <Home auth={auth} {...props} />} /> */}
           <Route path="/cxplaces/:id" render={(props) => <Detail auth={auth} {...props} />} />
           
           <Route path="/callback" render={(props) => {
@@ -36,6 +35,7 @@ export const makeMainRoutes = () => {
           }}/>
 
         <Route exact path="/cxplaces" component={CXPlaces} />
+        {/* <Route exact path="/map" component={Map} /> */}
 
         </div>
       </Router>
