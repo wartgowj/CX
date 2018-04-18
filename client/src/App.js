@@ -11,8 +11,29 @@ import Nav from "./components/Nav";
 
 
 class App extends Component {
+  
+
+
+
+
+renderHome = () => {
+console.log(this.props)
+      if(this.props.location.pathname === "/") {
+        return (
+          <div>
+            <Header />
+            <Link to={"/cxplaces/"}>
+              <Button
+                onClick={this.handleChange} />
+            </Link>
+          </div>)
+      }
+      return null
+    
+  }
+
   goTo(route) {
-    this.props.history.replace(`/home`)
+    this.props.history.replace(`/`)
   }
 
   login() {
@@ -36,7 +57,7 @@ class App extends Component {
             <div className="ratesDisplay">
               <RatesDisplay />
             </div>
-            <Link to="/home" /*onClick={this.goTo.bind(this, 'home')}*/>
+            <Link to="/" /*onClick={this.goTo.bind(this, 'home')}*/>
               <img className="style__logo___p5nsH" src={require("./utils/logo.png")} alt="logo" />
             </Link>
 
@@ -81,12 +102,7 @@ class App extends Component {
             </span>
           </div>
         </nav>
-
-
-        <Header />
-        <Link to={"/cxplaces/"}>
-          <Button />
-        </Link>
+        {this.renderHome()}
       </div>
     )
   }
