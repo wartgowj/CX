@@ -11,8 +11,9 @@ export default {
     getCxplace: function (id) {
         return axios.get("/api/cxplaces/" + id);
     },
-    updateCxplace: function (id) {
-        return axios.put("/api/cxplaces/" + id);
+
+    updateCxplace: function (id, obj) {
+        return axios.put("/api/cxplaces/" + id, obj);
     }
 
     //FUTURE ADD-ONS: 
