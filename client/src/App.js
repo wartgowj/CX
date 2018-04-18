@@ -61,7 +61,7 @@ class App extends Component {
                       className="btn-margin"
                       onClick={this.login.bind(this)}
                     >
-                      Log In
+                      Login
                   </button>
                   )
                 }
