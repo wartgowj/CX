@@ -123,7 +123,7 @@ class Detail extends Component {
         
             <Link to="/">← Back to Home</Link>
 
-            </p>
+           
             </div>
 
           )
