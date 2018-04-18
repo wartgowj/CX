@@ -350,3 +350,18 @@ body {
     border-bottom: 1px solid #d0cccc;
     z-index: 50;
 }
+.btn-margin {
+    color: whitesmoke;
+    background-color: #4183c4!important;
+    text-decoration: none;
+    background: 0 0;
+    padding: 8px;
+    width: 20%;
+    text-transform: none;
+
+}
+.btn-margin:hover {
+    color: whitesmoke!important;
+    background-color: transparent!important;
+    border:2px solid whitesmoke;
+}
