@@ -2,3 +2,12 @@
 	color: white;
     padding-right: 10px;
 }
+
+.ratesDisplay{
+font-family: "Montserrat", sans-serif;
+}   
+
+.live{
+    margin-bottom: 5px;
+    font-size: 14px;
+}
