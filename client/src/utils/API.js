@@ -14,6 +14,7 @@ export default {
     updateCxplace: function (id, obj) {
         return axios.put("/api/cxplaces/" + id, obj);
     }
+
     //FUTURE ADD-ONS: 
     // // Deletes the book with the given id
     // deleteBook: function (id) {

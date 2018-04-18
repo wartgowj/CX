@@ -36,23 +36,23 @@ class Detail extends Component {
       this.setState({
         cxplace: {
           buy: this.state.buy,
-          sell: this.state.sell
-          // comments: this.state.comments,
+          sell: this.state.sell,
+          comments: this.state.comments
         },
         isModalOpen: false
       })
 
       API.updateCxplace(this.props.match.params.id, {
         buy: this.state.buy,
-        sell: this.state.sell
-        // comments: this.state.comments
+        sell: this.state.sell,
+        comments: this.state.comments
       })
         .then(res => this.getPlace())
         .catch(err => console.log(err));
     }
   };
 
-
+  
   render() {
     return (
       <div>        
@@ -78,6 +78,8 @@ class Detail extends Component {
               <p>
               {this.state.cxplace.comments}
               </p>
+
+              
               <div>
                 <button onClick={() => this.openModal()}>Update Rates</button>
                   <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
@@ -93,6 +95,11 @@ class Detail extends Component {
                             name="sell"
                             placeholder="Sell Rate (required)"
                           />
+                          <TextArea
+                            onChange={this.handleInputChange}
+                            name="comments"
+                            placeholder="Add Comments (optional)"
+                            />
                           <FormBtn
                             disabled={!(this.state.buy && this.state.sell)}
                             onClick={this.handleFormSubmit}
@@ -101,10 +108,8 @@ class Detail extends Component {
                       </form>                        
                   </Modal>
               </div>
-              <br />
-              <div>
-                <button>Add Comments</button>
-              </div>
+              
+             
         
             <Link to="/">← Back to Home</Link>
       </div>
