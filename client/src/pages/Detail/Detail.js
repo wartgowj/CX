@@ -5,10 +5,16 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
 
 class Detail extends Component {
+  login() {
+    this.props.auth.login();
+  }
   state = {
     cxplace: {},
     isModalOpen: false
   };
+
+
+
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
@@ -54,13 +60,17 @@ class Detail extends Component {
 
   
   render() {
+    const { isAuthenticated } = this.props.auth;
     return (
-      <div>        
-              <h1>
-                {this.state.cxplace.name}
-              </h1>
-              <img src={this.state.cxplace.image} alt="logo"/>
-              <p>
+      <div>
+        {
+          isAuthenticated() && (
+            <div>
+            <h1>
+              {this.state.cxplace.name}
+            </h1>
+            <img src={this.state.cxplace.image} alt="logo" />
+            <p>
               {this.state.cxplace.buy}
               </p>
               <p>
@@ -112,6 +122,21 @@ class Detail extends Component {
              
         
             <Link to="/">← Back to Home</Link>
+
+            </p>
+            </div>
+
+          )
+        }
+        {
+          !isAuthenticated() && (
+            <div>
+              <p> You are not logged in. </p>
+            </div>
+          )
+        }
+            <Link to="/home">← Back to Home</Link>
+
       </div>
     );
   }
