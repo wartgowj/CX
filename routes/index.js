@@ -7,7 +7,7 @@ router.use("/api", apiRoutes);
 
 
 router.use(function(req, res) {
-  res.send('ERROR!')
+  res.send('Error. Best hit that back button.')
 });
 
 module.exports = router;
