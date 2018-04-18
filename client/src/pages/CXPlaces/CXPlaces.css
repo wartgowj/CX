@@ -12,6 +12,9 @@
     display: flex;
 
 }
+body{
+  background-size: cover!important
+}
 
 ul {
   list-style-type: none;

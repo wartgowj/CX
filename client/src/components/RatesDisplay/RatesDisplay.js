@@ -26,6 +26,7 @@ class RatesDisplay extends Component {
     render() {
         return (
             <div>
+                <div className="live">Live Exchange Rates :</div>
                 USD: <span className="dollar">$1</span>
                 MXN: <span className="dollar">$17</span>
                 {/* The $17 above needs to be changed to {this.state.pesoRate} for it to display the correct rates.  */}

@@ -132,7 +132,7 @@ button.signup:hover{
     display: none;
     vertical-align: middle;
     background-color: black;
-    height: 35px;
+    height: 50px!important;
     width: 2px;
     margin-left: 16px;
     margin-left: 1rem;
@@ -295,24 +295,25 @@ button.signup:hover{
 .style__inverse___1SzHV .signup {
     color: black;
 }
-button:hover {
-    color: #1e70bf;
-    text-decoration: none;
-}
-button:active, button:hover {
-    outline: 0;
-}
 
 .signup, .spliter {
     display: inline-block;
 }
 
-button {
-    color: #4183c4;
+.btn-margin {
+    color: whitesmoke;
+    background-color: #4183c4!important;
     text-decoration: none;
-}
-button {
     background: 0 0;
+    padding: 8px;
+    width: 20%;
+    text-transform: none;
+
+}
+.btn-margin:hover {
+    color: whitesmoke!important;
+    background-color: transparent!important;
+    border:2px solid whitesmoke;
 }
 
 
