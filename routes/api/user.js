@@ -19,5 +19,5 @@ module.exports = router;
 
 //FUTURE ADD-ONS: 
 //We'd like to create admin routes that allow an admin to add or remove a cxplace
-// .delete(usersController.remove);
-// .post(usersController.create);
+// .delete(cxplaceController.remove);
+// .post(cxplaceController.create);

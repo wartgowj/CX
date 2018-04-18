@@ -1,0 +1,109 @@
+.listBox{
+ position: relative;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    margin: 1rem 0;
+    margin-left: 25%;
+    padding: 1em 1em;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);	
+    width: 50%;
+    display: flex;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: blue;
+  text-decoration: none; /* no underline */
+}
+
+.cxName{
+
+  text-decoration: none; /* no underline */
+  color: #0000009e;
+}
+
+.address{
+	color: #63666a;
+
+    text-overflow: ellipsis;
+
+
+}
+.vertical_dotted_line
+{
+    border-left: 1px dotted #999999;
+    height: 120px;
+    margin: 15px;
+} 
+
+.nameContainer{
+	width: 350px;
+}
+
+.buyBox {
+	font-size: 18px;
+    margin-top: 21px;
+    margin-bottom: 10.5px;
+    font-family: "News Cycle","Arial Narrow Bold",sans-serif;
+    line-height: 1.8;
+
+}
+.fullList{
+
+}
+.buyGreen{
+  color:#85bb65 ;
+}
+.sellRed{
+  color:#c86b71;
+}
+.btn {
+    margin: 10px;
+    margin-left: 12px;
+}
+.btn-default {
+  background-color: white;
+
+}
+
+/*button.sellRed.btn.btn-default{
+  margin-left:14px;
+}*/
+button.sellButton.btn.btn-default{
+  margin-left:14px;
+
+}
+
+.buyButton{
+    color: #fff;
+    border: 1px solid #85bb65;
+    background-color: #85bb65;
+}
+
+.buyButton:hover{
+    color: #85bb65;
+    border: 1px solid #85bb65;
+    background-color: white;
+
+}
+.sellButton{
+  color: #fff;
+  border: 1px solid #c86b71;
+  background-color: #c86b71;
+}
+
+.sellButton:hover{
+    color: #c86b71;
+    border: 1px solid #c86b71;
+    background-color: white;
+
+}
+
+
+

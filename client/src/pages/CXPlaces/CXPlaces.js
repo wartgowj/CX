@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
+import "./CXPlaces.css";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+
+
 
 
 class CXPlaces extends Component {
@@ -23,14 +27,28 @@ class CXPlaces extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className="fullList">
           {
             this.state.cxplaces.map(function(cxplace){
-              return <li key={cxplace._id}>
+              return <li className="listBox" key={cxplace._id}>
                       <Link to={"/cxplaces/" + cxplace._id}>
-                      {cxplace.name} {cxplace.buy} {cxplace.sell}
+                        <div className="nameContainer">
+                          <h3 className="cxName">{cxplace.name}</h3>
+                          <div className="address">{cxplace.address}</div>
+                        </div>
                       </Link>
-                      </li>
+                      <span class="vertical_dotted_line"></span>
+                      <div className="buyBox">
+                        <div className="buy">
+                          <span className="buyGreen">Buy</span>
+                          <Button className="buyButton"> {cxplace.buy}</Button>
+                        </div>
+                        <div className="buy">
+                          <span className="sellRed">Sell</span>
+                          <Button className="sellButton"> {cxplace.sell}</Button>
+                        </div>
+                      </div>
+                    </li>
             })
           }
         </ul>

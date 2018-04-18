@@ -25,8 +25,8 @@ class RatesDisplay extends Component {
     render() {
         return (
             <div>
-                USD: $1
-                MXN: ${this.state.pesoRate}
+                USD: <span className="dollar">$1</span>
+                MXN: <span className="dollar">${this.state.pesoRate}</span>
             </div>
         )
         
