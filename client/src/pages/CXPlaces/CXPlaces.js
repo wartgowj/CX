@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import "./CXPlaces.css";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+
 
 
 
@@ -38,12 +40,12 @@ class CXPlaces extends Component {
                       <span class="vertical_dotted_line"></span>
                       <div className="buyBox">
                         <div className="buy">
-                          <span className="buySell">Buy</span>
-                          <span className="buySell">{cxplace.buy}</span>
+                          <span className="buyGreen">Buy</span>
+                          <Button className="buyButton"> {cxplace.buy}</Button>
                         </div>
                         <div className="buy">
-                          <span className="buySell">Sell</span>
-                          <span className="buySell">{cxplace.sell}</span>
+                          <span className="sellRed">Sell</span>
+                          <Button className="sellButton"> {cxplace.sell}</Button>
                         </div>
                       </div>
                     </li>
