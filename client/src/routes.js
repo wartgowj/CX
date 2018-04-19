@@ -1,11 +1,13 @@
 import React from 'react';
-import { Route, Router, Switch } from "react-router-dom";
+import { Redirect, Route, Router, Switch } from "react-router-dom";
 import App from './App';
 import Home from './pages/Home';
 import Callback from './components/Callback/Callback';
 import Auth from './components/Auth/Auth';
 import history from './utils/history';
 import Map from "./pages/Map"
+import NoMatch from "./pages/NoMatch"
+import Profile from './pages/Profile';
 
 
 
@@ -33,14 +35,21 @@ const makeMainRoutes = ({ children }) => {
           {/* {children} */}
           <Switch>
             <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
-            <Route exact path="/home" render={(props) => <Home auth={auth} {...props} />} />  
             <Route exact path="/cxplaces/:id" render={(props) => <Detail auth={auth} {...props} />} />
             <Route exact path="/callback" render={(props) => {
               handleAuthentication(props);
               return <Callback {...props} /> 
             }}/>
+            <Route path="/profile" render={(props) => (
+              !auth.isAuthenticated() ? (
+                <Redirect to="/home" />
+              ) : (
+                  <Profile auth={auth} {...props} />
+                )
+            )} />
             <Route exact path="/map" component={Map}/> 
             <Route exact path="/cxplaces" component={CXPlaces}/>
+            <Route component={NoMatch}/>
           </Switch>
         </div>
       </Router>

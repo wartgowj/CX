@@ -2,6 +2,7 @@ import React from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import RatesDisplay from "../RatesDisplay";
+import NavAccountButton from "../NavAccountButton"
 
 const Nav = ({ auth }) => {
 
@@ -12,6 +13,10 @@ const Nav = ({ auth }) => {
   const logout = () => {
     auth.logout();
   }
+
+
+  
+
   return (
   <div>
     <nav className="style__navbar___n7Lsv style__sticky___3fVnd style__transparent___1YBfK style__inverse___1SzHV">
@@ -41,14 +46,15 @@ const Nav = ({ auth }) => {
             }
             {
               auth.isAuthenticated() && (
-                <button
-                  id="qsLogoutBtn"
-                  bsStyle="primary"
-                  className="btn-margin"
-                  onClick={logout}
-                >
-                  Log Out
-                  </button>
+                // <button
+                //   id="qsLogoutBtn"
+                //   bsStyle="primary"
+                //   className="btn-margin"
+                //   onClick={logout}
+                // >
+                //   Log Out
+                //   </button>
+                  <NavAccountButton userProfile={auth.userProfile} getProfile={auth.getProfile} logOut={logout}/>
               )
             }
           </span>
