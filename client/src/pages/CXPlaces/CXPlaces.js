@@ -35,6 +35,14 @@ class CXPlaces extends Component {
     return (
       
       <div>
+      <div>
+      <Link to={"/map/"}>
+        <Button className="mapButton">
+          <img className="mapIcon" src={require("../../utils/mapIcon.png")} alt="logo" />
+          <span className="mapFont">Map</span>
+        </Button>
+      </Link>
+      </div>
         <ul className="fullList">
           {
             this.state.cxplaces.map(function(cxplace){

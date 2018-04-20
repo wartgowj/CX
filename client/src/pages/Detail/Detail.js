@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./Detail.css";
 import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
 import ListContainer from "../../components/ListContainer";
 import Moment from 'react-moment';
 import moment from 'moment';
+import "./Detail.css";
 
 
 class Detail extends Component {
@@ -68,30 +70,22 @@ class Detail extends Component {
         {
           isAuthenticated() && (
             <div>
-            <h1>
-              {this.state.cxplace.name}
-            </h1>
-            <img src={this.state.cxplace.image} alt="logo" />
-            <p>
-              {this.state.cxplace.buy}
+
+            <li className="listBox" key={this.state.cxplace._id}>
+                        <img className="logoStyle" src={this.state.cxplace.image} alt="logo" />
+
+                        <div className="nameContainer">
+                          <h3 className="cxName">{this.state.cxplace.name}</h3>
+                          <div className="info">{this.state.cxplace.hours}</div>
+
+                          <div className="info">{this.state.cxplace.address}</div>
+                          <div className="info">{this.state.cxplace.phone}</div>
+                         <p>Last updated:
+                          <br />
+                          <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date} />
               </p>
-              <p>
-              {this.state.cxplace.sell}
-              </p>
-              <p>
-              {this.state.cxplace.address}
-              </p>
-              <p>
-              {this.state.cxplace.phone}
-              </p>
-              <p>
-              {this.state.cxplace.hours}
-              </p>
-              <p>Last updated:
-                <br />
-                <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date} />
-              </p>
-              <ListContainer>
+                        </div>
+            <ListContainer>
                 <ul>
                 {this.state.cxplace.comments.map(comment =>(
                   <li>
@@ -100,6 +94,8 @@ class Detail extends Component {
                   ))}
                 </ul>              
               </ListContainer>
+                         </li>
+
               <div>
                 <button onClick={() => this.openModal()}>Update Rates</button>
                   <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
