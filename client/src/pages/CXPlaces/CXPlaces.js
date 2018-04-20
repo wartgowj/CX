@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import "./CXPlaces.css";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import Moment from 'react-moment';
+import moment from 'moment';
+
 
 
 
 
 class CXPlaces extends Component {
+  login() {
+    this.props.auth.login();
+  }
   state = {
     cxplaces: []
   };
@@ -25,7 +31,9 @@ class CXPlaces extends Component {
   };
 
   render() {
+    const { isAuthenticated } = this.props.auth;
     return (
+      
       <div>
       <div>
       <Link to={"/map/"}>
@@ -46,16 +54,43 @@ class CXPlaces extends Component {
                         </div>
                       </Link>
                       <span class="vertical_dotted_line"></span>
-                      <div className="buyBox">
-                        <div className="buy">
-                          <span className="buyGreen">Buy</span>
-                          <Button className="buyButton"> {cxplace.buy}</Button>
+
+                      {isAuthenticated() && (
+                        <div className="buyBox">
+                          <div className="buy">
+                            <span className="buyGreen">Buy</span>
+                            <Button className="buyButton"> {cxplace.buy}</Button>
+                          </div>
+                          <div className="buy">
+                            <span className="sellRed">Sell</span>
+                            <Button className="sellButton"> {cxplace.sell}</Button>
+                          </div>
                         </div>
-                        <div className="buy">
-                          <span className="sellRed">Sell</span>
-                          <Button className="sellButton"> {cxplace.sell}</Button>
+                      )}
+
+                      {!isAuthenticated() && (
+                        <div className="buyBox">
+                          <div className="buy">
+                            <span className="buyGreen">Buy</span>
+                          <p>{cxplace.buy}</p>
+                           
+                          </div>
+                          <div className="buy">
+                            <span className="sellRed">Sell</span>
+                            <p>{cxplace.sell}</p>
+                          </div>
+                        <div>
+                      Log in to update rates.
                         </div>
-                      </div>
+                        </div>
+                        
+                      )}
+                      
+                <div>Last updated:
+                  <br/>
+                  <Moment format="HH:mm DD/MM/YY" date={cxplace.date}/>
+                </div>
+
                     </li>
             })
           }
@@ -66,30 +101,3 @@ class CXPlaces extends Component {
 }
 
 export default CXPlaces;
-
-
-
-// handleInputChange = event => {
-//   const { name, value } = event.target;
-//   this.setState({
-//     [name]: value
-//   });
-// };
-// deleteBook = id => {
-//   API.deleteBook(id)
-//     .then(res => this.loadPlaces())
-//     .catch(err => console.log(err));
-// };
-
-// handleFormSubmit = event => {
-//   event.preventDefault();
-//   if (this.state.name && this.state.buyRate && this.state.sellRate) {
-//     API.saveBook({
-//       name: this.state.name,
-//       buyRate: this.state.buyRate,
-//       sellRate: this.state.sellRate
-//     })
-//       .then(res => this.loadPlaces())
-//       .catch(err => console.log(err));
-//   }
-// };

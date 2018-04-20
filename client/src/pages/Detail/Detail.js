@@ -5,6 +5,8 @@ import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
 import ListContainer from "../../components/ListContainer";
+import Moment from 'react-moment';
+import moment from 'moment';
 import "./Detail.css";
 
 
@@ -19,10 +21,6 @@ class Detail extends Component {
     isModalOpen: false
   };
 
-
-
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
     this.getPlace();
   }
@@ -72,6 +70,7 @@ class Detail extends Component {
         {
           isAuthenticated() && (
             <div>
+
             <li className="listBox" key={this.state.cxplace._id}>
                         <img className="logoStyle" src={this.state.cxplace.image} alt="logo" />
 
@@ -81,7 +80,20 @@ class Detail extends Component {
 
                           <div className="info">{this.state.cxplace.address}</div>
                           <div className="info">{this.state.cxplace.phone}</div>
+                         <p>Last updated:
+                          <br />
+                          <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date} />
+              </p>
                         </div>
+            <ListContainer>
+                <ul>
+                {this.state.cxplace.comments.map(comment =>(
+                  <li>
+                    {comment}
+                  </li>
+                  ))}
+                </ul>              
+              </ListContainer>
                          </li>
 
               <div>
@@ -112,12 +124,7 @@ class Detail extends Component {
                       </form>                        
                   </Modal>
               </div>
-              
-             
-        
-            <Link to="/">← Back to Home</Link>
 
-           
             </div>
 
           )
@@ -129,7 +136,7 @@ class Detail extends Component {
             </div>
           )
         }
-            <Link to="/home">← Back to Home</Link>
+            <Link to="/">← Back to Home</Link>
 
       </div>
     );

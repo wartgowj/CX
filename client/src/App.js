@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Router from './routes'
+import Moment from 'react-moment';
+
 
 
 class App extends Component {
