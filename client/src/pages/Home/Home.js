@@ -14,9 +14,7 @@ class Home extends Component {
         return (
             <div className="container">
                 <Header />
-                <Link to={"/cxplaces/"}>
-                    <Button />
-                </Link>
+                    <Button/>
             </div>
         );
     }
