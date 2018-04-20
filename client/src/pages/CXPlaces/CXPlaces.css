@@ -108,5 +108,29 @@ button.sellButton.btn.btn-default{
 
 }
 
+.mapButton{
 
+    position: relative;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    margin: 1rem 0;
+    margin-left: 66%;
+    padding: 1em 1em;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    width: 10%;
+    color: black;
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
 
+}
+.mapFont{
+    margin-left: 5px;
+    text-transform: none;
+    color: #0000009e;
+}
+.mapIcon{
+      height: 35px;
+    margin: -7px;
+}

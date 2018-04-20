@@ -5,6 +5,8 @@ import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
 import ListContainer from "../../components/ListContainer";
+import "./Detail.css";
+
 
 class Detail extends Component {
   login() {
@@ -70,34 +72,18 @@ class Detail extends Component {
         {
           isAuthenticated() && (
             <div>
-            <h1>
-              {this.state.cxplace.name}
-            </h1>
-            <img src={this.state.cxplace.image} alt="logo" />
-            <p>
-              {this.state.cxplace.buy}
-              </p>
-              <p>
-              {this.state.cxplace.sell}
-              </p>
-              <p>
-              {this.state.cxplace.address}
-              </p>
-              <p>
-              {this.state.cxplace.phone}
-              </p>
-              <p>
-              {this.state.cxplace.hours}
-              </p>
-              <ListContainer>
-                <ul>
-                {this.state.cxplace.comments.map(comment =>(
-                  <li>
-                    {comment}
-                  </li>
-                  ))}
-                </ul>              
-              </ListContainer>
+            <li className="listBox" key={this.state.cxplace._id}>
+                        <img className="logoStyle" src={this.state.cxplace.image} alt="logo" />
+
+                        <div className="nameContainer">
+                          <h3 className="cxName">{this.state.cxplace.name}</h3>
+                          <div className="info">{this.state.cxplace.hours}</div>
+
+                          <div className="info">{this.state.cxplace.address}</div>
+                          <div className="info">{this.state.cxplace.phone}</div>
+                        </div>
+                         </li>
+
               <div>
                 <button onClick={() => this.openModal()}>Update Rates</button>
                   <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
