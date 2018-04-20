@@ -1,0 +1,12 @@
+.logoStyle{
+
+    height: 250px;
+    width: 250px;
+    margin-right: 20px;
+}
+.info {
+    color: #63666a;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    padding: 3px;
+}
