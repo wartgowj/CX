@@ -73,7 +73,7 @@ export default class Map extends Component {
             this.state.cxplaces.forEach(cxplace => {
                 let icon = {
                     url: cxplace.icon, // url
-                    scaledSize: new google.maps.Size(50, 50), // scaled size
+                    scaledSize: new google.maps.Size(40, 40), // scaled size
                     // origin: new google.maps.Point(0, 0), // origin
                     // anchor: new google.maps.Point(0, 0) // anchor
                 };
