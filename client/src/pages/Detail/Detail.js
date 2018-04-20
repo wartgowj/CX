@@ -85,16 +85,7 @@ class Detail extends Component {
                           <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date} />
               </p>
                         </div>
-            <ListContainer>
-                <ul>
-                {this.state.cxplace.comments.map(comment =>(
-                  <li>
-                    {comment}
-                  </li>
-                  ))}
-                </ul>              
-              </ListContainer>
-                         </li>
+                        </li>
 
               <div>
                 <button onClick={() => this.openModal()}>Update Rates</button>
