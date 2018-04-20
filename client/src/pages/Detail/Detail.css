@@ -1,3 +1,4 @@
+
 .logoStyle{
 
     height: 250px;
@@ -9,4 +10,18 @@
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     padding: 3px;
+
+form {
+	padding: 40px;
+	width: 100%;
+}
+h1 {
+	margin-top: 10px;
+	font-family: 'Open Sans','Helvetica Neue',Arial,Helvetica,sans-serif;
+	font-weight: 700;
+	text-align: center;
+}
+.btn {
+	
+	text-align: center !important;
 }
