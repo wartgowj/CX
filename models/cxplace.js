@@ -19,3 +19,4 @@ const cxplaceSchema = new Schema({
 const Cxplace = mongoose.model("Cxplace", cxplaceSchema);
 
 module.exports = Cxplace;
+
