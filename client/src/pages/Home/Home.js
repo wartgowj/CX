@@ -1,18 +1,25 @@
-import React from "react";
+import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Header from "../../components/Header";
 
-export const Home = props => (
-    <div>
-    <Header />
-    
-    <Link to={"/cxplaces/"}>
-            <Button />
-    </Link>
-    </div>
-    
-);
+
+
+class Home extends Component {
+    login() {
+        this.props.auth.login();
+    }
+    render() {
+        const { isAuthenticated } = this.props.auth;
+        return (
+            <div className="container">
+                <Header />
+                    <Button/>
+            </div>
+        );
+    }
+}
 
 export default Home;
+
 

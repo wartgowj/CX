@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 0vh;
+
   width: 100vw;
   text-align: center;
 }
