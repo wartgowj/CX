@@ -7,11 +7,12 @@ class Modal extends React.Component {
 
       let modalStyle = {
         position: 'absolute',
-        top: '50%',
+        top: '65%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         zIndex: '9999',
-        background: '#fff'
+        background: '#fff',
+        boxShadow: 'black 3px 3px 6px'
       }
 
       if (this.props.width && this.props.height) {
@@ -31,7 +32,7 @@ class Modal extends React.Component {
       let backdropStyle = {
         position: 'absolute',
         width: '100%',
-        height: '100%',
+        height: 'auto',
         top: '0px',
         left: '0px',
         zIndex: '9998',
