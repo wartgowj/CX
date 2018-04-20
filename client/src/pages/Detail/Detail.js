@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./Detail.css";
 import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
