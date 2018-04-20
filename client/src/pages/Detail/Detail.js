@@ -4,6 +4,9 @@ import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
 import ListContainer from "../../components/ListContainer";
+import Moment from 'react-moment';
+import moment from 'moment';
+
 
 class Detail extends Component {
   login() {
@@ -16,10 +19,6 @@ class Detail extends Component {
     isModalOpen: false
   };
 
-
-
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
     this.getPlace();
   }
@@ -88,6 +87,10 @@ class Detail extends Component {
               <p>
               {this.state.cxplace.hours}
               </p>
+              <p>Last updated:
+                <br />
+                <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date} />
+              </p>
               <ListContainer>
                 <ul>
                 {this.state.cxplace.comments.map(comment =>(
@@ -125,12 +128,7 @@ class Detail extends Component {
                       </form>                        
                   </Modal>
               </div>
-              
-             
-        
-            <Link to="/">← Back to Home</Link>
 
-           
             </div>
 
           )
@@ -142,7 +140,7 @@ class Detail extends Component {
             </div>
           )
         }
-            <Link to="/home">← Back to Home</Link>
+            <Link to="/">← Back to Home</Link>
 
       </div>
     );

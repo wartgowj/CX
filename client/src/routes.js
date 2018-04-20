@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect, Route, Router, Switch } from "react-router-dom";
-import App from './App';
 import Home from './pages/Home';
 import Callback from './components/Callback/Callback';
 import Auth from './components/Auth/Auth';
@@ -36,6 +35,7 @@ const makeMainRoutes = ({ children }) => {
           <Switch>
             <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
             <Route exact path="/cxplaces/:id" render={(props) => <Detail auth={auth} {...props} />} />
+            <Route exact path="/cxplaces" render={(props) => <CXPlaces auth={auth} {...props} />} />
             <Route exact path="/callback" render={(props) => {
               handleAuthentication(props);
               return <Callback {...props} /> 
@@ -48,7 +48,6 @@ const makeMainRoutes = ({ children }) => {
                 )
             )} />
             <Route exact path="/map" component={Map}/> 
-            <Route exact path="/cxplaces" component={CXPlaces}/>
             <Route component={NoMatch}/>
           </Switch>
         </div>
