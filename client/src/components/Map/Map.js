@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import MAP from "../../services/Map";
 import ReactDOM from 'react-dom';
+import "./Map.css";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+
 
 export default class Map extends Component {
     state = {
@@ -79,8 +84,16 @@ export default class Map extends Component {
             margin: 'auto' 
         }
 
-        return ( 
-            <div ref="map" style={style}></div>
+        return (
+            <div>
+            <Link to={"/cxplaces/"}>
+                <Button className="backButton">
+                    <img className="backIcon" src={require("../../utils/back.png")} alt="logo" />
+                    <span className="backFont">List</span>
+                </Button>
+            </Link>
+                <div ref="map" style={style}></div>
+            </div>
         )
     }
 }
