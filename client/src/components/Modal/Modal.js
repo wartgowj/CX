@@ -7,12 +7,13 @@ class Modal extends React.Component {
 
       let modalStyle = {
         position: 'absolute',
-        top: '65%',
+        top: '75%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         zIndex: '9999',
         background: '#fff',
-        boxShadow: 'black 3px 3px 6px'
+        boxShadow: 'black 3px 3px 6px',
+        width: '500px'        
       }
 
       if (this.props.width && this.props.height) {
