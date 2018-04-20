@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
+import ListContainer from "../../components/ListContainer";
 
 class Detail extends Component {
   state = {
-    cxplace: {},
+    cxplace: {
+      comments: [],  
+    },
     isModalOpen: false
   };
   // When this component mounts, grab the book with the _id of this.props.match.params.id
@@ -31,7 +34,7 @@ class Detail extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    if (this.state.buy && this.state.sell) {
+    if (this.state.buy || this.state.sell) {
 
       this.setState({
         cxplace: {
@@ -75,11 +78,15 @@ class Detail extends Component {
               <p>
               {this.state.cxplace.hours}
               </p>
-              <p>
-              {this.state.cxplace.comments}
-              </p>
-
-              
+              <ListContainer>
+                <ul>
+                {this.state.cxplace.comments.map(comment =>(
+                  <li>
+                    {comment}
+                  </li>
+                  ))}
+                </ul>              
+              </ListContainer>
               <div>
                 <button onClick={() => this.openModal()}>Update Rates</button>
                   <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
@@ -88,12 +95,12 @@ class Detail extends Component {
                           <Input
                             onChange={this.handleInputChange}
                             name="buy"
-                            placeholder="Buy Rate (required)"
+                            placeholder="Buy Rate (optional)"
                           />
                           <Input
                             onChange={this.handleInputChange}
                             name="sell"
-                            placeholder="Sell Rate (required)"
+                            placeholder="Sell Rate (optional)"
                           />
                           <TextArea
                             onChange={this.handleInputChange}
