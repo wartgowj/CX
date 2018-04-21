@@ -66,8 +66,12 @@ export default class Map extends Component {
                 map: this.map,
                 title: "You are here",
                 animation: google.maps.Animation.BOUNCE,
-                icon: usericon
-            })
+                icon: usericon,
+                url: "/profile"
+            });
+            google.maps.event.addListener(userMarker, 'click', function () {
+                window.location.href = this.url;
+            });
 
             // Creates a marker for each cxplace
             this.state.cxplaces.forEach(cxplace => {
