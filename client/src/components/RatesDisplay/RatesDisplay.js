@@ -14,13 +14,13 @@ class RatesDisplay extends Component {
 
     loadRates = () => {
         console.log("this needs to be enabled to display correct rates!")
-        // ExchangeRates.getRates()
-        //     .then(results => {
-        //         return results.json();
-        //     }).then(data => {
-        //         console.log(data)
-        //         this.setState({ pesoRate: data.rates.MXN})
-        //     })
+        ExchangeRates.getRates()
+            .then(results => {
+                return results.json();
+            }).then(data => {
+                console.log(data)
+                this.setState({ pesoRate: data.rates.MXN})
+            })
     };
 
     render() {
@@ -28,8 +28,7 @@ class RatesDisplay extends Component {
             <div>
                 <div className="live">Live Exchange Rates :</div>
                 USD: <span className="dollar">$1</span>
-                MXN: <span className="dollar">$17</span>
-                {/* The $17 above needs to be changed to {this.state.pesoRate} for it to display the correct rates.  */}
+                MXN: <span className="dollar">${this.state.pesoRate}</span>
             </div>
         )
         

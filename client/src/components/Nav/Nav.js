@@ -24,7 +24,7 @@ const Nav = ({ auth }) => {
         <div className="ratesDisplay">
           <RatesDisplay />
         </div>
-        <Link to="/" /*onClick={this.goTo.bind(this, 'home')}*/>
+        <Link to="/">
           <img className="style__logo___p5nsH" src={require("../../utils/logo.png")} alt="logo" />
         </Link>
         <span className="style__right___memgl">
@@ -46,14 +46,6 @@ const Nav = ({ auth }) => {
             }
             {
               auth.isAuthenticated() && (
-                // <button
-                //   id="qsLogoutBtn"
-                //   bsStyle="primary"
-                //   className="btn-margin"
-                //   onClick={logout}
-                // >
-                //   Log Out
-                //   </button>
                   <NavAccountButton userProfile={auth.userProfile} getProfile={auth.getProfile} logOut={logout}/>
               )
             }
