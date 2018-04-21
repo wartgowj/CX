@@ -14,6 +14,10 @@ export default {
 
     updateCxplace: function (id, obj) {
         return axios.put("/api/cxplaces/" + id, obj);
+    },
+
+    updateCxplaceRate: function (id, obj) {
+        return axios.put("/api/cxplaces/" + id, obj);
     }
 
     //FUTURE ADD-ONS: 

@@ -4,6 +4,7 @@ const cxplacesController = require("../../controllers/cxplaceController");
 // Matches with "/api/cxplaces"
 router.route("/")
   .get(cxplacesController.findAll)
+  .get(cxplacesController.save)
   
 
 // Matches with "/api/cxplaces/:id"

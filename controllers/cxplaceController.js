@@ -17,8 +17,41 @@ module.exports = {
     },
 
     update: function(req, res) {
+
+        if (req.body.buy && req.body.sell) {
+
+            if (req.body.comments) {
+                db.Cxplace
+                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell}, $push: {comments: req.body.comments}}, {new: true})
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+
+            } else {
+                db.Cxplace
+                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell}})
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+
+            }
+            
+        } else if (req.body.buy) {
+            db.Cxplace
+                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy}})
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+
+        } else if (req.body.sell) {
+
+            db.Cxplace
+                .findByIdAndUpdate({ _id: req.params.id }, {$set: {sell: req.body.sell}})
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+
+        }
+    },
+    save: function(req, res) {
         db.Cxplace
-            .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell}, $push: {comments: req.body.comments}}, {new: true})
+            .findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     }
