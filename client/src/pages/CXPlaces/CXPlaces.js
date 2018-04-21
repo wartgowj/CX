@@ -58,6 +58,7 @@ class CXPlaces extends Component {
                   cxplaceBuy={cxplace.buy}
                   cxplaceSell={cxplace.sell}
                   loadCxplaces={this.loadCxplaces}
+                  cxplaceDate={cxplace.date}
                 />
               )
             })

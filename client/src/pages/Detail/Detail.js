@@ -70,9 +70,8 @@ class Detail extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div>
-        {
-          isAuthenticated() && (
-            <div>
+        
+            
             <div>
               <li className="listBox" key={this.state.cxplace._id}>
               <div className="flex">   
@@ -92,7 +91,8 @@ class Detail extends Component {
                 </div>
             </li>
             </div>
-
+        {
+          isAuthenticated() && (
               <div>
                 <button onClick={() => this.openModal()}>Update Rates</button>
                   <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
@@ -120,32 +120,24 @@ class Detail extends Component {
                           </FormBtn>
                       </form>                        
                   </Modal>
-              </div>
-
-            </div>
-
-          )
-        }
-
-        <ListContainer>
+              <ListContainer>
                 <ul>
-                {this.state.cxplace.comments.map(comment =>(
-                  <li>
-                    {comment}
-                  </li>
+                  {this.state.cxplace.comments.map(comment => (
+                    <li>
+                      {comment}
+                    </li>
                   ))}
-                </ul>              
-        </ListContainer>
+                </ul>
+              </ListContainer>
+              </div>
+          )}
+           
 
-              {!isAuthenticated() && (
-            <div className="centerPage">
-              <p className="font"> You are not logged in. </p>
-            <Link to="/">
-              <Button className="backButt">← Back to Home</Button>
-            </Link>
-            </div>
-          )
-        }
+    
+
+
+
+ 
 
       </div>
     );
