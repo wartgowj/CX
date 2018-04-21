@@ -25,6 +25,7 @@ const cxplaceSeed = [
     image: "http://www.dolarex.com/voxfiles/skins/skn-dolarex/htmls/images/dolarex-logo.png",
     icon:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfvLZjKadFo4N0R1619VutSN0b66E5SvWpQ89R4btHz7WTbFvAEw",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -40,6 +41,7 @@ const cxplaceSeed = [
     image: "http://www.coosanjer.com.gt/wp-content/uploads/2017/02/Golden-Money-green-logo-small.jpg",
     icon: "https://freeiconshop.com/wp-content/uploads/edd/money-flat.png",
     comments:["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -55,6 +57,7 @@ const cxplaceSeed = [
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "http://www.emoji.co.uk/files/microsoft-emojis/objects-windows10/9759-money-with-wings.png",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -69,7 +72,8 @@ const cxplaceSeed = [
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://cdn.shopify.com/s/files/1/1061/1924/products/Money_Emoji_Icon_59b7293e-e703-4ba4-b3c3-a7b9401f89fb_large.png?v=1513249391",
-    comments: ["test1", "test2"],		
+    comments: ["test1", "test2"],	
+    user: null,	
     date: new Date(Date.now())
   },
   {
@@ -85,6 +89,7 @@ const cxplaceSeed = [
     image: "http://mallsmexico.com/imagenes/2016/02/23203_Intercam.jpg",
     icon: "https://marketplace.canva.com/MAB2srZ9i7g/1/thumbnail/canva-green-money-icon%2C-vector-graphic-MAB2srZ9i7g.png",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -100,6 +105,7 @@ const cxplaceSeed = [
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnJwk-g0_c4yz2nDNRnOnIQdPop5wXJmK7WUKKnWfGCg_MZDmhnQ",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -115,6 +121,7 @@ const cxplaceSeed = [
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "http://moziru.com/images/money-clipart-circle-9.png",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -130,6 +137,7 @@ const cxplaceSeed = [
     image: "https://media.glassdoor.com/sqll/751786/currency-exchange-international-squarelogo-1429768257677.png",
     icon: "http://redriverunited.org/wp-content/uploads/2010/03/money-sign-button.gif",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -145,6 +153,7 @@ const cxplaceSeed = [
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "http://www.iconsplace.com/download/red-money-bag-512.png",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -160,6 +169,7 @@ const cxplaceSeed = [
     image: "https://www.expresspawn.com/images/logo.png",
     icon: "https://i.pinimg.com/236x/7b/a3/0a/7ba30a0ea5823e4a17b95efe522bea70--icon-illustrations-pile.jpg",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -175,6 +185,7 @@ const cxplaceSeed = [
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "http://www.webhostingreviewjam.com/wp-content/uploads/2014/04/competitive-icon-dollar-money-icon.png",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
   {
@@ -190,6 +201,7 @@ const cxplaceSeed = [
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://www.fast2host.com/templates/fast2host/assets/img/money-icon.png",
     comments: ["test1", "test2"],
+    user: null,
     date: new Date(Date.now())
   },
 ];
