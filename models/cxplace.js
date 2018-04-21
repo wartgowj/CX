@@ -13,6 +13,7 @@ const cxplaceSchema = new Schema({
     hours: { type: String, required: true },
     image: { type: String, required: true },
     comments: [{ type: String}],
+    user: {type: String},
     date: { type: Date, default: Date.now }
 });
 
