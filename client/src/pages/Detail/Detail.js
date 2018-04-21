@@ -11,7 +11,7 @@ class Detail extends Component {
   }
   state = {
     cxplace: {
-      comments: [],  
+      comments: []  
     },
     isModalOpen: false
   };
@@ -46,7 +46,7 @@ class Detail extends Component {
         cxplace: {
           buy: this.state.buy,
           sell: this.state.sell,
-          comments: this.state.comments
+          comments: this.state.cxplace.comments
         },
         isModalOpen: false
       })
@@ -55,6 +55,7 @@ class Detail extends Component {
         buy: this.state.buy,
         sell: this.state.sell,
         comments: this.state.comments
+        // comments: this.state.comments
       })
         .then(res => this.getPlace())
         .catch(err => console.log(err));
@@ -90,6 +91,7 @@ class Detail extends Component {
               </p>
               <ListContainer>
                 <ul>
+                {console.log(this.state.cxplace.comments)}
                 {this.state.cxplace.comments.map(comment =>(
                   <li>
                     {comment}
