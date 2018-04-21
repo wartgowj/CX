@@ -6,7 +6,6 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
 import ListContainer from "../../components/ListContainer";
 import Moment from 'react-moment';
-import moment from 'moment';
 import "./Detail.css";
 import { Button } from "react-bootstrap";
 
