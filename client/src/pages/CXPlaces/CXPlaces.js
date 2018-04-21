@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import "./CXPlaces.css";
 import CXPlace from "../../components/CXPlace";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 class CXPlaces extends Component {
 
@@ -45,6 +47,12 @@ class CXPlaces extends Component {
   render() {
     return (
       <div>
+        <Link to={"/map/"}>
+          <Button className="mapButton">
+            <img className="mapIcon" src={require("../../utils/mapIcon.png")} alt="logo" />
+            <span className="mapFont">Map</span>
+          </Button>
+        </Link>
         <ul className="fullList">
           {
             this.state.cxplaces.map((cxplace) => {
