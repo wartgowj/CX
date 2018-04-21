@@ -1,20 +1,17 @@
 
 .backButton{
-
-    position: relative;
-    background: #fff;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
     box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    margin: 1rem 0;
-    margin-left: 85%!important;
-    padding: 1em 1em;
-    border-radius: .28571429rem;
-    border: 1px solid rgba(34,36,38,.15);
-    width: 10%;
-    color: black;
-    border: 1px solid whitesmoke;
-    background-color: whitesmoke;
 
+    width: 10%;
+    height: 50%;
+    position: relative;
+    top: 0px;
+    bottom: 0;
+    left: 79%;
+    right: 0;
+    margin-top: 20px;
+    z-index: 1;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
 }
 .backFont{
     margin-left: 5px;
