@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import MAP from "../../services/Map";
 import ReactDOM from 'react-dom';
 import "./Map.css";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
@@ -73,9 +73,7 @@ export default class Map extends Component {
             this.state.cxplaces.forEach(cxplace => {
                 let icon = {
                     url: cxplace.icon, // url
-                    scaledSize: new google.maps.Size(40, 40), // scaled size
-                    // origin: new google.maps.Point(0, 0), // origin
-                    // anchor: new google.maps.Point(0, 0) // anchor
+                    scaledSize: new google.maps.Size(40, 40),
                 };
                 const marker = new google.maps.Marker({
                     position: { lat: parseFloat(cxplace.lat), lng: parseFloat(cxplace.lng) },
