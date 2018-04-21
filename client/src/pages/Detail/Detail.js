@@ -8,6 +8,9 @@ import ListContainer from "../../components/ListContainer";
 import Moment from 'react-moment';
 import moment from 'moment';
 import "./Detail.css";
+import { Button } from "react-bootstrap";
+
+
 
 
 class Detail extends Component {
@@ -70,31 +73,25 @@ class Detail extends Component {
         {
           isAuthenticated() && (
             <div>
+            <div>
+              <li className="listBox" key={this.state.cxplace._id}>
+              <div className="flex">   
+                    <Link to="/cxplaces/">
+                  <Button className="backButt">← Back to List</Button>
+                </Link>             
+                <img className="logoStyle" src={this.state.cxplace.image} alt="logo" />
 
-            <li className="listBox" key={this.state.cxplace._id}>
-                        <img className="logoStyle" src={this.state.cxplace.image} alt="logo" />
-
-                        <div className="nameContainer">
-                          <h3 className="cxName">{this.state.cxplace.name}</h3>
-                          <div className="info">{this.state.cxplace.hours}</div>
-
-                          <div className="info">{this.state.cxplace.address}</div>
-                          <div className="info">{this.state.cxplace.phone}</div>
-                         <p>Last updated:
-                          <br />
-                          <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date} />
-              </p>
-                        </div>
-            <ListContainer>
-                <ul>
-                {this.state.cxplace.comments.map(comment =>(
-                  <li>
-                    {comment}
-                  </li>
-                  ))}
-                </ul>              
-              </ListContainer>
-                         </li>
+              </div>
+                <div className="nameContainer">
+                  <h3 className="cxName">{this.state.cxplace.name}</h3>
+                  <div className="info">{this.state.cxplace.hours}</div>
+                  <div className="info">{this.state.cxplace.address}</div>
+                  <div className="info">{this.state.cxplace.phone}</div>
+                  <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/>
+                  </div>
+                </div>
+            </li>
+            </div>
 
               <div>
                 <button onClick={() => this.openModal()}>Update Rates</button>
@@ -129,14 +126,26 @@ class Detail extends Component {
 
           )
         }
-        {
-          !isAuthenticated() && (
-            <div>
-              <p> You are not logged in. </p>
+
+        <ListContainer>
+                <ul>
+                {this.state.cxplace.comments.map(comment =>(
+                  <li>
+                    {comment}
+                  </li>
+                  ))}
+                </ul>              
+        </ListContainer>
+
+              {!isAuthenticated() && (
+            <div className="centerPage">
+              <p className="font"> You are not logged in. </p>
+            <Link to="/">
+              <Button className="backButt">← Back to Home</Button>
+            </Link>
             </div>
           )
         }
-            <Link to="/">← Back to Home</Link>
 
       </div>
     );

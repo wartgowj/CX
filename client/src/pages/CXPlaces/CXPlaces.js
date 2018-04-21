@@ -65,6 +65,8 @@ class CXPlaces extends Component {
                             <span className="sellRed">Sell</span>
                             <Button className="sellButton"> {cxplace.sell}</Button>
                           </div>
+                          <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={cxplace.date}/>
+                          </div>
                         </div>
                       )}
 
@@ -79,17 +81,11 @@ class CXPlaces extends Component {
                             <span className="sellRed">Sell</span>
                             <p>{cxplace.sell}</p>
                           </div>
-                        <div>
-                      Log in to update rates.
-                        </div>
+                          <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={cxplace.date}/>
+                          </div>
                         </div>
                         
                       )}
-                      
-                <div>Last updated:
-                  <br/>
-                  <Moment format="HH:mm DD/MM/YY" date={cxplace.date}/>
-                </div>
 
                     </li>
             })
