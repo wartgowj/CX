@@ -4,5 +4,14 @@
         line-height: 1;
         vertical-align: middle;
         border-radius: 3px;
-        width: 22px;
+        width: 40px;
+}
+
+.dropdown-menu{
+	    left: -100px;
+}
+#dropdown-size-extra-small{
+	margin-left: 10px;
+	background-color: transparent;
+    border-color: transparent;
 }
