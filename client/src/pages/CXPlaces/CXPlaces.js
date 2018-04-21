@@ -2,17 +2,19 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import "./CXPlaces.css";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+
+import { Button } from "react-bootstrap";
 import Modal from "../../components/Modal";
 import { Input, FormBtn } from "../../components/Form";
 import CXPlace from "../../components/CXPlace";
-
+import Moment from 'react-moment';
 
 class CXPlaces extends Component {
-
   constructor(props) {
     super(props);
-
+    login() {
+    this.props.auth.login();
+  }
     this.state = {
       cxplaces: [],
       buy: "",
@@ -22,7 +24,6 @@ class CXPlaces extends Component {
 
   }
   
-
   componentDidMount() {
     this.loadCxplaces();
   }
@@ -43,40 +44,22 @@ class CXPlaces extends Component {
     });
   }
 
-  // handleRateUpdate = event => {
-
-  //   event.preventDefault();
-
-  //   if (this.state.sell) {
-
-  //     console.log ('updating sell rate')
-
-  //     API.updateCxplaceRate(this.props.match.params.id, {
-  //       sell: this.state.sell
-  //     })
-  //     .then(res => this.loadCxplaces())
-  //     .catch(err => console.log(err));
-
-  //   } else if (this.state.buy){
-
-  //     console.log ('updating buy rate')
-
-  //     API.updateCxplaceRate(this.props.match.params.id, {
-  //       buy: this.state.buy
-  //     })
-  //     .then(res => this.loadCxplaces())
-  //     .catch(err => console.log(err));
-
-  //   }
-      
-  // }
-
-
   render() {
+    const { isAuthenticated } = this.props.auth;
     return (
+      
       <div>
+      <div>
+      <Link to={"/map/"}>
+        <Button className="mapButton">
+          <img className="mapIcon" src={require("../../utils/mapIcon.png")} alt="logo" />
+          <span className="mapFont">Map</span>
+        </Button>
+      </Link>
+      </div>
         <ul className="fullList">
           {
+
             this.state.cxplaces.map((cxplace) => {
               return (
                 <CXPlace
@@ -89,46 +72,35 @@ class CXPlaces extends Component {
                   loadCxplaces={this.loadCxplaces}
                 />
               )
+
+                          <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={cxplace.date}/>
+                          </div>
+                        </div>
+                      )}
+
+                      {!isAuthenticated() && (
+                        <div className="buyBox">
+                          <div className="buy">
+                            <span className="buyGreen">Buy</span>
+                          <p>{cxplace.buy}</p>
+                           
+                          </div>
+                          <div className="buy">
+                            <span className="sellRed">Sell</span>
+                            <p>{cxplace.sell}</p>
+                          </div>
+                          <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={cxplace.date}/>
+                          </div>
+                        </div>
+                        
+                      )}  
             })
           }
         </ul>
       </div>
     );
   }
-  openModal() {
-    this.setState({ isModalOpen: true })
-  }
-
-  closeModal() {
-    this.setState({ isModalOpen: false })
-  }  
+  
 }
 
 export default CXPlaces;
-
-
-
-// handleInputChange = event => {
-//   const { name, value } = event.target;
-//   this.setState({
-//     [name]: value
-//   });
-// };
-// deleteBook = id => {
-//   API.deleteBook(id)
-//     .then(res => this.loadPlaces())
-//     .catch(err => console.log(err));
-// };
-
-// handleFormSubmit = event => {
-//   event.preventDefault();
-//   if (this.state.name && this.state.buyRate && this.state.sellRate) {
-//     API.saveBook({
-//       name: this.state.name,
-//       buyRate: this.state.buyRate,
-//       sellRate: this.state.sellRate
-//     })
-//       .then(res => this.loadPlaces())
-//       .catch(err => console.log(err));
-//   }
-// };

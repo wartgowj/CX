@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "CX",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -19,13 +19,14 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free-solid": "^5.0.10",
+    "add": "^2.0.6",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "react-redux": "^5.0.7",
-    "redux": "^3.7.2",
     "google-maps-react": "^2.0.0",
     "mongoose": "^4.11.7",
-    "react-bootstrap": "^0.32.1"
+    "react-bootstrap": "^0.32.1",
+    "remove": "^0.1.5"
   }
 }

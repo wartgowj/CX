@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import MAP from "../../services/Map";
 import ReactDOM from 'react-dom';
+import "./Map.css";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+
 
 export default class Map extends Component {
     state = {
@@ -45,26 +50,40 @@ export default class Map extends Component {
             const node = ReactDOM.findDOMNode(mapRef);
 
             const mapConfig = Object.assign({}, {
-                center: { lat: this.state.userLat, lng: this.state.userLng },
-                zoom: 10
+                center: { lat: 32.7102, lng: -117.10593 },
+                zoom: 11
             })
 
             this.map = new maps.Map(node, mapConfig)
 
             // Creates a marker at the users location
+            const usericon = {
+                url: "https://www.shareicon.net/data/2015/11/26/678308_man_512x512.png",
+                scaledSize: new google.maps.Size(60, 60),
+            };
             const userMarker = new google.maps.Marker({
-                position:  {lat: this.state.userLat, lng: this.state.userLng},
+                position: { lat: this.state.userLat, lng: this.state.userLng},
                 map: this.map,
                 title: "You are here",
                 animation: google.maps.Animation.BOUNCE,
+                icon: usericon
             })
 
             // Creates a marker for each cxplace
             this.state.cxplaces.forEach(cxplace => {
+                let icon = {
+                    url: cxplace.icon, // url
+                    scaledSize: new google.maps.Size(40, 40),
+                };
                 const marker = new google.maps.Marker({
                     position: { lat: parseFloat(cxplace.lat), lng: parseFloat(cxplace.lng) },
                     map: this.map, 
-                    title: cxplace.name 
+                    title: cxplace.name,
+                    icon: icon,
+                    url: "/cxplaces/"+ cxplace._id
+                });
+                google.maps.event.addListener(marker, 'click', function () {
+                    window.location.href = this.url;
                 });
             })
 
@@ -74,13 +93,21 @@ export default class Map extends Component {
 
     render() {
         const style = { //sets size of map//
-            width: '90vw', 
-            height: '75vh',
+            width: '80vw', 
+            height: '90vh',
             margin: 'auto' 
         }
 
-        return ( 
-            <div ref="map" style={style}></div>
+        return (
+            <div>
+            <Link to={"/cxplaces/"}>
+                <Button className="backButton">
+                    <img className="backIcon" src={require("../../utils/back.png")} alt="logo" />
+                    <span className="backFont">List</span>
+                </Button>
+            </Link>
+                <div ref="map" style={style}></div>
+            </div>
         )
     }
 }

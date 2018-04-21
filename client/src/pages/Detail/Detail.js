@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./Detail.css";
 import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
 import ListContainer from "../../components/ListContainer";
+import Moment from 'react-moment';
+import "./Detail.css";
+import { Button } from "react-bootstrap";
+
+
+
 
 class Detail extends Component {
   login() {
@@ -16,10 +23,6 @@ class Detail extends Component {
     isModalOpen: false
   };
 
-
-
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
     this.getPlace();
   }
@@ -70,35 +73,26 @@ class Detail extends Component {
         {
           isAuthenticated() && (
             <div>
-            <h1>
-              {this.state.cxplace.name}
-            </h1>
-            <img src={this.state.cxplace.image} alt="logo" />
-            <p>
-              {this.state.cxplace.buy}
-              </p>
-              <p>
-              {this.state.cxplace.sell}
-              </p>
-              <p>
-              {this.state.cxplace.address}
-              </p>
-              <p>
-              {this.state.cxplace.phone}
-              </p>
-              <p>
-              {this.state.cxplace.hours}
-              </p>
-              <ListContainer>
-                <ul>
-                {console.log(this.state.cxplace.comments)}
-                {this.state.cxplace.comments.map(comment =>(
-                  <li>
-                    {comment}
-                  </li>
-                  ))}
-                </ul>              
-              </ListContainer>
+            <div>
+              <li className="listBox" key={this.state.cxplace._id}>
+              <div className="flex">   
+                    <Link to="/cxplaces/">
+                  <Button className="backButt">← Back to List</Button>
+                </Link>             
+                <img className="logoStyle" src={this.state.cxplace.image} alt="logo" />
+
+              </div>
+                <div className="nameContainer">
+                  <h3 className="cxName">{this.state.cxplace.name}</h3>
+                  <div className="info">{this.state.cxplace.hours}</div>
+                  <div className="info">{this.state.cxplace.address}</div>
+                  <div className="info">{this.state.cxplace.phone}</div>
+                  <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/>
+                  </div>
+                </div>
+            </li>
+            </div>
+
               <div>
                 <button onClick={() => this.openModal()}>Update Rates</button>
                   <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
@@ -127,24 +121,31 @@ class Detail extends Component {
                       </form>                        
                   </Modal>
               </div>
-              
-             
-        
-            <Link to="/">← Back to Home</Link>
 
-           
             </div>
 
           )
         }
-        {
-          !isAuthenticated() && (
-            <div>
-              <p> You are not logged in. </p>
+
+        <ListContainer>
+                <ul>
+                {this.state.cxplace.comments.map(comment =>(
+                  <li>
+                    {comment}
+                  </li>
+                  ))}
+                </ul>              
+        </ListContainer>
+
+              {!isAuthenticated() && (
+            <div className="centerPage">
+              <p className="font"> You are not logged in. </p>
+            <Link to="/">
+              <Button className="backButt">← Back to Home</Button>
+            </Link>
             </div>
           )
         }
-            <Link to="/home">← Back to Home</Link>
 
       </div>
     );
