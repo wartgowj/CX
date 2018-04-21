@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 import "./CXPlaces.css";
 import { Button } from "react-bootstrap";
 import Moment from 'react-moment';
-import moment from 'moment';
-
-
-
 
 
 class CXPlaces extends Component {
