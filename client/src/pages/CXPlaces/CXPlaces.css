@@ -8,7 +8,7 @@
     padding: 1em 1em;
     border-radius: .28571429rem;
     border: 1px solid rgba(34,36,38,.15);	
-    width: 50%;
+    width: 60%;
     display: flex;
 
 }
@@ -54,7 +54,7 @@ a {
     margin-top: 21px;
     margin-bottom: 10.5px;
     font-family: "News Cycle","Arial Narrow Bold",sans-serif;
-    line-height: 1.8;
+    line-height: 1;
 
 }
 .fullList{
@@ -109,20 +109,18 @@ button.sellButton.btn.btn-default{
 }
 
 .mapButton{
-
-    position: relative;
-    background: #fff;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    margin: 1rem 0;
-    margin-left: 66%;
-    padding: 1em 1em;
-    border-radius: .28571429rem;
-    border: 1px solid rgba(34,36,38,.15);
     width: 10%;
-    color: black;
-    border: 1px solid whitesmoke;
-    background-color: whitesmoke;
+    height: 50%;
+    position: relative;
+    top: 0px;
+    bottom: 0;
+    left: 75.5%;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 20px;
+    z-index: 1;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+
 
 }
 .mapFont{
@@ -133,4 +131,8 @@ button.sellButton.btn.btn-default{
 .mapIcon{
       height: 35px;
     margin: -7px;
+}
+.lastUpdated {
+    font-style: italic;
+    font-size: 14px;
 }
