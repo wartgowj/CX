@@ -53,7 +53,6 @@ h1 {
     flex-direction: column-reverse;
 }
 .centerPage{
-
     width: 200px;
     height: 50%;
     position: absolute;
@@ -65,12 +64,52 @@ h1 {
 }
 
 .font{
-	    margin-left: 25px;
+    margin-left: 25px;
 }
 
+.buybox{
+    position: relative;
+    background: #fff;
+    margin: 1rem 0;
+    padding: 1em 1em;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    margin-right: 10px;
 
+}
 
+.buySellSort{
+    display:flex;
+}
 
+.updateButton{
+    position: relative;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    margin: 1rem 0;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    color: black;
+    border: 1px solid whitesmoke;
+    text-transform: none;
+    padding: 23px 41px;
+}
+.updateButton:hover{
+    color:whitesmoke;
+    background-color:#808080;
 
+}
+
+.buyDetail{
+        color: #fff;
+    border: 1px solid #85bb65;
+    background-color: #85bb65;
+}
+.sellDetail{
+    color: #fff;
+    border: 1px solid #c86b71;
+    background-color: #c86b71;
+}
 
 
