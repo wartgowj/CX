@@ -86,6 +86,8 @@ class Detail extends Component {
                   <div className="info">{this.state.cxplace.hours}</div>
                   <div className="info">{this.state.cxplace.address}</div>
                   <div className="info">{this.state.cxplace.phone}</div>
+                  <div className="info">{this.state.cxplace.buy}</div>
+                  <div className="info">{this.state.cxplace.sell}</div>
                   <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/>
                   </div>
                 </div>

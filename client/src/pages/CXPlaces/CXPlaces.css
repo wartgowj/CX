@@ -136,3 +136,15 @@ button.sellButton.btn.btn-default{
     font-style: italic;
     font-size: 14px;
 }
+
+
+
+.cxName:hover{
+  color:#5183bf;
+}
+.address:hover{
+ color:#5183bf; 
+}
+
+
+
