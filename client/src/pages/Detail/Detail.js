@@ -8,6 +8,8 @@ import ListContainer from "../../components/ListContainer";
 import Moment from 'react-moment';
 import "./Detail.css";
 import { Button } from "react-bootstrap";
+import CXPlace from "../../components/CXPlace";
+
 
 
 
@@ -75,26 +77,24 @@ class Detail extends Component {
             <div>
               <li className="listBox" key={this.state.cxplace._id}>
               <div className="flex">   
-                    <Link to="/cxplaces/">
+                <Link to="/cxplaces/">
                   <Button className="backButt">← Back to List</Button>
                 </Link>             
                 <img className="logoStyle" src={this.state.cxplace.image} alt="logo" />
-
               </div>
                 <div className="nameContainer">
                   <h3 className="cxName">{this.state.cxplace.name}</h3>
                   <div className="info">{this.state.cxplace.hours}</div>
                   <div className="info">{this.state.cxplace.address}</div>
                   <div className="info">{this.state.cxplace.phone}</div>
-                  <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/>
+                  <div className="buySellSort">
+                    <div className="buybox buyDetail">Buy: {this.state.cxplace.buy}</div>
+                    <div className="buybox sellDetail"> Sell: {this.state.cxplace.sell}</div>
                   </div>
-                </div>
-            </li>
-            </div>
-        {
+                          {
           isAuthenticated() && (
               <div>
-                <button onClick={() => this.openModal()}>Update Rates</button>
+                <button className="updateButton" onClick={() => this.openModal()}>Update Rates</button>
                   <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
                     <h1>Update Rates</h1>
                       <form>
@@ -120,17 +120,13 @@ class Detail extends Component {
                           </FormBtn>
                       </form>                        
                   </Modal>
-              <ListContainer>
-                <ul>
-                  {this.state.cxplace.comments.map(comment => (
-                    <li>
-                      {comment}
-                    </li>
-                  ))}
-                </ul>
-              </ListContainer>
               </div>
-          )}
+              )}
+              <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/></div>
+              </div>
+            </li>
+          </div>
+
            
 
     
@@ -153,3 +149,14 @@ class Detail extends Component {
 
 
 export default Detail;
+
+//<ListContainer>
+//                <ul>
+ //                 {this.state.cxplace.comments.map(comment => (
+  //                  <li>
+    //                  {comment}
+      //              </li>
+        //          ))}
+          //      </ul>
+//</ListContainer>
+
