@@ -79,7 +79,7 @@ class CXPlace extends Component {
 	render() {
 		const { isAuthenticated } = this.props.auth;
 		return (
-	        <li className="listBox" key={this.props.cxplaceId}>
+	        <li className="listBox list" id="listDetail" key={this.props.cxplaceId}>
 	            <Link to={"/cxplaces/" + this.props.cxplaceId}>
 	                <div className="nameContainer">
 	                    <h3 className="cxName">{this.props.cxplaceName}</h3>

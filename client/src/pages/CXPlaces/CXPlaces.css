@@ -1,3 +1,4 @@
+
 .listBox{
  position: relative;
     background: #fff;
@@ -141,4 +142,27 @@ button.sellButton.btn.btn-default{
 }
 .address:hover{
  color:#5183bf; 
+}
+@media (min-width: 320px) and (max-width: 579px) {
+  .list{
+    margin-left: 0;
+    display:block;
+    width:90%;
+  }
+  .vertical_dotted_line {
+    display: none;
+  }
+  .mapButton{
+    left: 71.5%;
+    width:20%;
+  }
+  .backButton{
+    left: 68.5%;
+    width: 20%;
+  }
+body {
+    background-size: cover!important;
+    background-repeat: no-repeat;
+    height: 100%;
+}
 }

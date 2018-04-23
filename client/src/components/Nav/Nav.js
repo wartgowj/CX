@@ -24,13 +24,13 @@ const Nav = ({ auth }) => {
         <div className="ratesDisplay">
           <RatesDisplay />
         </div>
-        <Link to="/">
-          <img className="style__logo___p5nsH" src={require("../../utils/logo.png")} alt="logo" />
-        </Link>
-        <span className="style__right___memgl">
-          <span>
+        <div className="logo">
+          <Link to="/">
+            <img className="style__logo___p5nsH" src={require("../../utils/logo.png")} alt="logo" />
+          </Link>
+        </div>
+        <div className="style__right___memgl">
             <span className="spliter"></span>
-          </span>
           <span>
             {
               !auth.isAuthenticated() && (
@@ -50,7 +50,7 @@ const Nav = ({ auth }) => {
               )
             }
           </span>
-        </span>
+        </div>
       </div>
     </nav>
   </div>
