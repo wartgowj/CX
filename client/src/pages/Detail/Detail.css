@@ -102,7 +102,7 @@ h1 {
 }
 
 .buyDetail{
-        color: #fff;
+    color: #fff;
     border: 1px solid #85bb65;
     background-color: #85bb65;
 }
@@ -112,4 +112,26 @@ h1 {
     background-color: #c86b71;
 }
 
+@media (min-width: 320px) and (max-width: 579px) {
+    .listDetail{
+    display: flex!important;
+    flex-direction: column!important;
+    margin-left: 13%!important;
+    width: 77%!important;
+    }
+  .flex{
+    display: block;
+  }
+  .logoStyle {
+    height: 150px;
+    width: 150px;
+    margin-left: 65px;
+    margin-top: 20px;
+    }
+    .backButt {
+    margin-left: 54%!important;
+    margin-top: 0%!important;
+    }
+    
+}
 

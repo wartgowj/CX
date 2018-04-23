@@ -75,7 +75,7 @@ class Detail extends Component {
         
             
             <div>
-              <li className="listBox" key={this.state.cxplace._id}>
+              <li className="listBox listDetail" key={this.state.cxplace._id}>
               <div className="flex">   
                 <Link to="/cxplaces/">
                   <Button className="backButt">← Back to List</Button>

@@ -365,3 +365,25 @@ body {
     background-color: transparent!important;
     border:2px solid whitesmoke;
 }
+@media (min-width: 320px) and (max-width: 579px) {
+    .ratesDisplay{
+        display:none;
+    }
+    .style__logo___p5nsH {
+    left: 25%;
+    }
+    .spliter {
+        display:none;
+    }
+    .btn-margin {
+        width:30%;
+    }
+    body{
+    background-size: auto!important;
+    background-repeat: no-repeat;
+    height:100%;
+    }
+    h2{
+        font-size:3rem;
+    }
+}
