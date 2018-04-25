@@ -28,7 +28,7 @@ class RatesDisplay extends Component {
         return (
             <OverlayTrigger placement="bottom" overlay={
                 <Tooltip id="tooltip">
-                    These rates are provided by openexchangerates.org.
+                    These are the current international exchange rates.
                 </Tooltip>
             }>
                 <div>
