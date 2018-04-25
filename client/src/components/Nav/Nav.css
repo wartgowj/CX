@@ -370,13 +370,14 @@ body {
         display:none;
     }
     .style__logo___p5nsH {
-    left: 25%;
+    left: 50%;
     }
     .spliter {
         display:none;
     }
     .btn-margin {
-        width:30%;
+        width: 20%;
+        font-size: 16px;
     }
     body{
     background-size: auto!important;
@@ -385,5 +386,17 @@ body {
     }
     h2{
         font-size:3rem;
+    }
+}
+/*IPAD*/
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+    .style__right___memgl {
+        width: none;
+    }
+    body{
+        background-image:none;
+        background-color: #a1c6eb;
     }
 }
