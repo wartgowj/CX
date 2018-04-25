@@ -49,6 +49,7 @@ h1 {
 }
 
 .flex{
+    display: grid;
     flex-direction: column-reverse;
 }
 .centerPage{
