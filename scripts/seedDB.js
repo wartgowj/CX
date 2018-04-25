@@ -79,7 +79,7 @@ const cxplaceSeed = [
   {
     name: "Intercam",
     address: "364 E.San Ysidro Blvd San Ysidro, CA 92173",
-    lat: "32.55051",
+    lat: "32.65051",
     lng: "-117.038746",
     phone: "(619) 690-0776",
     commision: "0",
