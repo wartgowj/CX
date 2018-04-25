@@ -129,7 +129,7 @@ class Detail extends Component {
                             placeholder="Add Comments (optional)"
                             />
                           <FormBtn
-                            disabled={!(this.state.buy && this.state.sell)}
+                            disabled={!(this.state.buy || this.state.sell)}
                             onClick={this.handleFormSubmit}
                           > Update                            
                           </FormBtn>
