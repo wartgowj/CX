@@ -11,7 +11,7 @@
     "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "installDeps": "yarn && cd client && yarn",
-    "postinstall": "yarn build"
+    "postinstall": "cd client && yarn && cd .. && yarn build"
   },
   "author": "",
   "license": "ISC",
