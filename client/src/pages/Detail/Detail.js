@@ -12,7 +12,6 @@ import ListContainer from "../../components/ListContainer";
 
 
 
-
 class Detail extends Component {
   login() {
     this.props.auth.login();

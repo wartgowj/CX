@@ -23,7 +23,7 @@ const cxplaceSeed = [
     sell: 18.20,
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "http://www.dolarex.com/voxfiles/skins/skn-dolarex/htmls/images/dolarex-logo.png",
-    icon:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfvLZjKadFo4N0R1619VutSN0b66E5SvWpQ89R4btHz7WTbFvAEw",
+    icon:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfej-9Cgx0-SG9EdJE6yKIBH94W9q-OyQPrzCymHxmebHUDQsW",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -39,7 +39,7 @@ const cxplaceSeed = [
     sell: 18.18,
     hours: "Monday to Sunday, 8:00AM to 7:00PM",
     image: "http://www.coosanjer.com.gt/wp-content/uploads/2017/02/Golden-Money-green-logo-small.jpg",
-    icon: "https://freeiconshop.com/wp-content/uploads/edd/money-flat.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXFHNzGJb0_Dh8VbkAha-ckiHV24LLXNBkd4iU0eQBDT34AsdQ",
     comments:["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -55,7 +55,7 @@ const cxplaceSeed = [
     sell: 18.20,
     hours: "Monday to Friday, 9:00AM to 5:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
-    icon: "http://www.emoji.co.uk/files/microsoft-emojis/objects-windows10/9759-money-with-wings.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV99yMLY5Gt5YaX5SZlLT9SdzoN0KDcnNocjVsfQ8V5OzIg2cd",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -71,7 +71,7 @@ const cxplaceSeed = [
     sell: 17.29,
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
-    icon: "https://cdn.shopify.com/s/files/1/1061/1924/products/Money_Emoji_Icon_59b7293e-e703-4ba4-b3c3-a7b9401f89fb_large.png?v=1513249391",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTn1uQqeibeUKmXdAOqGWDkqeHWdjdvi8LeBEy10xAfTCBW236sA",
     comments: ["This place is awesome", "Highway robbery!"],	
     user: null,	
     date: new Date(Date.now())
@@ -87,7 +87,7 @@ const cxplaceSeed = [
     sell: 17.48,
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "http://mallsmexico.com/imagenes/2016/02/23203_Intercam.jpg",
-    icon: "https://marketplace.canva.com/MAB2srZ9i7g/1/thumbnail/canva-green-money-icon%2C-vector-graphic-MAB2srZ9i7g.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2hmRwShEuR7u-0Z6X4NL9cel321ZZAbFfpGZfqzZnR012-vlo",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -103,7 +103,7 @@ const cxplaceSeed = [
     sell: 17.50,
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
-    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnJwk-g0_c4yz2nDNRnOnIQdPop5wXJmK7WUKKnWfGCg_MZDmhnQ",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiVO7me7QhRzYWod-Nc1F6RbRZWuB7P76-ckvB6HX_hf1cHk8OBg",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -119,7 +119,7 @@ const cxplaceSeed = [
     sell: 17.61,
     hours: "Open 24 Hours",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
-    icon: "http://moziru.com/images/money-clipart-circle-9.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF9vnASJF15JNI6KA06Nl0j_niwAjK-TB9fySpgGBDJ1yMUoCk",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -135,7 +135,7 @@ const cxplaceSeed = [
     sell: 16.77,
     hours: "Monday to Friday, 10:00AM to 9:00PM",
     image: "https://media.glassdoor.com/sqll/751786/currency-exchange-international-squarelogo-1429768257677.png",
-    icon: "http://redriverunited.org/wp-content/uploads/2010/03/money-sign-button.gif",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvbByrJHxOvPkxpzgnMVbj0c8gpyjqXxtKe1CjPUZBOiUMP2xa",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -151,7 +151,7 @@ const cxplaceSeed = [
     sell: 17.30,
     hours: "Monday to Sunday, 7:30AM to 7:30PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
-    icon: "http://www.iconsplace.com/download/red-money-bag-512.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXMxwynSYC4thHsZt4vmHPMxZsOpccz1uWPZtro-Y5CURxSqQUoQ",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -167,7 +167,7 @@ const cxplaceSeed = [
     sell: 17.45,
     hours: "Monday to Sunday, 9:00AM to 8:00PM",
     image: "https://www.expresspawn.com/images/logo.png",
-    icon: "https://i.pinimg.com/236x/7b/a3/0a/7ba30a0ea5823e4a17b95efe522bea70--icon-illustrations-pile.jpg",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThF5eLfdHPwR2ak6cb8uGATP82i04z2H0kislLqt3apb5H0Y9i",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -183,7 +183,7 @@ const cxplaceSeed = [
     sell: 17.50,
     hours: "Monday to Sunday, 9:00AM to 8:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
-    icon: "http://www.webhostingreviewjam.com/wp-content/uploads/2014/04/competitive-icon-dollar-money-icon.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6iCPUkbrfjamxITI7PFbvS4Cwh4WQGfad42cbBhUg9gF4KdxM",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
@@ -199,7 +199,7 @@ const cxplaceSeed = [
     sell: 18.25,
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
-    icon: "https://www.fast2host.com/templates/fast2host/assets/img/money-icon.png",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZEi17i_axmt7BugdLzsSMG8i3wYEHsMMRt-i7sSFNveIPoZip",
     comments: ["This place is awesome", "Highway robbery!"],
     user: null,
     date: new Date(Date.now())
