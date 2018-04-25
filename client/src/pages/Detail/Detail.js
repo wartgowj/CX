@@ -60,7 +60,7 @@ class Detail extends Component {
         buy: this.state.buy,
         sell: this.state.sell,
         comments: this.state.comments
-        // comments: this.state.comments
+       
       })
         .then(res => this.getPlace())
         .catch(err => console.log(err));
@@ -99,6 +99,9 @@ class Detail extends Component {
                     <h1>Update Rates</h1>
                       <form>
                           <Input
+                            type="number"
+                            step="0.01"
+                            pattern="^\d+(?:\.\d{1,2})?$"
                             onChange={this.handleInputChange}
                             name="buy"
                             placeholder="Buy Rate (optional)"
@@ -127,11 +130,14 @@ class Detail extends Component {
             </li>
           </div>
 
-           
+  <ListContainer>
+    {this.state.cxplace.comments.map(comment =>(
+      <li>
+        {comment}
+      </li>
+      ))}
 
-    
-
-
+  </ListContainer>
 
  
 
