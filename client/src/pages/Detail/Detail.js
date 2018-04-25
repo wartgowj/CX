@@ -6,23 +6,28 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
 import Moment from 'react-moment';
 import "./Detail.css";
-import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
+import { Button, Tooltip, OverlayTrigger, Panel } from "react-bootstrap";
 import ListContainer from "../../components/ListContainer";
 
 
-
-
 class Detail extends Component {
-  login() {
-    this.props.auth.login();
-  }
-  state = {
+  constructor(props, context) {
+    super(props, context);
+  this.state = {
     cxplace: {
       comments: []  
     },
-    isModalOpen: false
-  };
+    isModalOpen: false,
+    open: false
+  }
+}
 
+
+
+
+  login() {
+    this.props.auth.login();
+  }
   componentDidMount() {
     this.getPlace();
   }
@@ -140,19 +145,27 @@ class Detail extends Component {
               <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/></div>
                 <hr></hr>
                 <div className="nameContainer">
-                  <h4 className="cxName">Reviews</h4>
-                </div>
-                <ListContainer>
-                {this.state.cxplace.comments.map(comment =>(
-                  <div className="reviewBox">
-                    <div className="reviews">
-                     <hr></hr>
-                      {comment}
-                    </div>
-                  </div>
-                  ))}
+                <Button onClick={() => this.setState({ open: !this.state.open })}>
+                  Reviews
+                </Button>
+                <br />
+                <Panel id="collapsible-panel-example-1" expanded={this.state.open}>
+                  <Panel.Collapse>
+                    <Panel.Body>
+                        {this.state.cxplace.comments.map(comment => (
+                          <div className="reviewBox">
+                            <div className="reviews">
+                              <hr></hr>
+                              {comment}
+                            </div>
+                          </div>
+                        ))}
+                    </Panel.Body>
+                  </Panel.Collapse>
+                </Panel>
 
-              </ListContainer>
+                
+                </div>               
               </div>
 
             </li>
@@ -175,13 +188,20 @@ class Detail extends Component {
 
 export default Detail;
 
-//<ListContainer>
-//                <ul>
- //                 {this.state.cxplace.comments.map(comment => (
-  //                  <li>
-    //                  {comment}
-      //              </li>
-        //          ))}
-          //      </ul>
-//</ListContainer>
 
+
+{/* {()=> {
+                  if (this.state.clicked){
+                    <ListContainer>
+                      {this.state.cxplace.comments.map(comment => (
+                        <div className="reviewBox">
+                          <div className="reviews">
+                            <hr></hr>
+                            {comment}
+                          </div>
+                        </div>
+                      ))}
+
+                    </ListContainer>
+                  }
+                }} */}
