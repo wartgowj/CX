@@ -7,7 +7,7 @@ router.use("/api", apiRoutes);
 
 
 router.use(function(req, res) {
-  res.send('Error. Best hit that back button.')
+res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 module.exports = router;
