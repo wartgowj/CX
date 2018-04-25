@@ -146,9 +146,9 @@ button.sellButton.btn.btn-default{
 /*iphone 6/7/8 plus */
 @media (min-width: 320px) and (max-width: 579px) {
   .list{
-    margin-left: 0;
+    margin-left: -10px;
     display:block;
-    width:90%;
+    width:94%;
   }
   .vertical_dotted_line {
     display: none;
