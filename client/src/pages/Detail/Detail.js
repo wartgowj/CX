@@ -12,6 +12,7 @@ import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 
 
 
+
 class Detail extends Component {
   login() {
     this.props.auth.login();
