@@ -4,11 +4,9 @@ import "./Detail.css";
 import API from "../../utils/API";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Modal from "../../components/Modal";
-import ListContainer from "../../components/ListContainer";
 import Moment from 'react-moment';
 import "./Detail.css";
-import { Button } from "react-bootstrap";
-import CXPlace from "../../components/CXPlace";
+import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 
 
 
@@ -87,9 +85,23 @@ class Detail extends Component {
                   <div className="info">{this.state.cxplace.hours}</div>
                   <div className="info">{this.state.cxplace.address}</div>
                   <div className="info">{this.state.cxplace.phone}</div>
-                  <div className="buySellSort">
-                    <div className="buybox buyDetail">Buy: {this.state.cxplace.buy}</div>
-                    <div className="buybox sellDetail"> Sell: {this.state.cxplace.sell}</div>
+                <div className="buySellSort">
+                  <OverlayTrigger placement="top" overlay={
+                  <Tooltip id="tooltip">
+                    If exchanging to dollars, this is the amount of pesos you pay per dollar.
+                      </Tooltip>
+                  }>
+                  <div className="buybox buyDetail">Buy: {this.state.cxplace.buy}</div>
+                  </OverlayTrigger>
+
+                <OverlayTrigger placement="top" overlay={
+                  <Tooltip id="tooltip">
+                     If exchanging to pesos, this is the amount of pesos you get per dollar you pay.
+                      </Tooltip>
+                }>
+                  <div className="buybox sellDetail"> Sell: {this.state.cxplace.sell}</div>
+                </OverlayTrigger>
+            
                   </div>
                           {
           isAuthenticated() && (
