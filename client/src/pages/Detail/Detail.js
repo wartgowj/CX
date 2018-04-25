@@ -143,7 +143,6 @@ class Detail extends Component {
               </div>
               )}
               <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/></div>
-                <hr></hr>
                 <div className="nameContainer">
                 <Button onClick={() => this.setState({ open: !this.state.open })}>
                   Reviews
