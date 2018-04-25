@@ -7,7 +7,7 @@ import Modal from "../../components/Modal";
 import ListContainer from "../../components/ListContainer";
 import Moment from 'react-moment';
 import "./Detail.css";
-import { Button } from "react-bootstrap";
+import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 
 
 
@@ -86,18 +86,41 @@ class Detail extends Component {
                   <div className="info">{this.state.cxplace.hours}</div>
                   <div className="info">{this.state.cxplace.address}</div>
                   <div className="info">{this.state.cxplace.phone}</div>
-                  <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/>
+                  {/* BUY AND SELL WITH TOOLTIP */}
+                  <div className="buy">
+                    <OverlayTrigger placement="left" overlay={
+                      <Tooltip id="tooltip">
+                        If exchanging to dollars, this is the amount of pesos you pay per dollar.
+                    </Tooltip>
+                    }>
+                  <div> <span className="buyGreen">Buy: </span> <span className="info">${this.state.cxplace.buy}</span></div>
+                 
+                    </OverlayTrigger>
+                    
+                    <OverlayTrigger placement="left" overlay={
+                      <Tooltip id="tooltip">
+                        If exchanging to pesos, this is the amount of pesos you get per dollar you pay.
+                            </Tooltip>
+                    }>
+                    <div>
+                    <span className="sellRed">Sell: </span><span className="info">${this.state.cxplace.sell}</span>
+                    </div>
+                    </OverlayTrigger>
+                  </div>
+                  {/* BUY / SELL WITH TOOLTIP END */}
+                  <div className="info lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/>
                   </div>
                 </div>
-            </li>
-            </div>
-        {
-          isAuthenticated() && (
-              <div>
-                <button onClick={() => this.openModal()}>Update Rates</button>
-                  <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-                    <h1>Update Rates</h1>
-                      <form>
+
+                {/* THIS IS THE UPDATE BUTTON/MODAL  */}
+
+                {
+                  isAuthenticated() && (
+                    <div>
+                      <button onClick={() => this.openModal()}>Update Rates</button>
+                      <Modal isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+                        <h1>Update Rates</h1>
+                        <form>
                           <Input
                             onChange={this.handleInputChange}
                             name="buy"
@@ -112,33 +135,30 @@ class Detail extends Component {
                             onChange={this.handleInputChange}
                             name="comments"
                             placeholder="Add Comments (optional)"
-                            />
+                          />
                           <FormBtn
                             disabled={!(this.state.buy && this.state.sell)}
                             onClick={this.handleFormSubmit}
-                          > Update                            
-                          </FormBtn>
-                      </form>                        
-                  </Modal>
-              <ListContainer>
-                <ul>
-                  {this.state.cxplace.comments.map(comment => (
-                    <li>
-                      {comment}
-                    </li>
-                  ))}
-                </ul>
-              </ListContainer>
-              </div>
-          )}
-           
+                          > Update
+                              </FormBtn>
+                        </form>
+                      </Modal>
+                      <ListContainer>
+                        <ul>
+                          {this.state.cxplace.comments.map(comment => (
+                            <li>
+                              {comment}
+                            </li>
+                          ))}
+                        </ul>
+                      </ListContainer>
+                    </div>
+                  )}
+              {/* THIS IS THE END OF THE UPDATE BUTTON/MODAL */}
 
-    
-
-
-
- 
-
+            </li>
+            
+            </div>
       </div>
     );
   }
