@@ -7,6 +7,7 @@ import Modal from "../../components/Modal";
 import Moment from 'react-moment';
 import "./Detail.css";
 import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
+import ListContainer from "../../components/ListContainer";
 
 
 
@@ -138,18 +139,25 @@ class Detail extends Component {
               </div>
               )}
               <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/></div>
+                <hr></hr>
+                <div className="nameContainer">
+                  <h4 className="cxName">Reviews</h4>
+                </div>
+                <ListContainer>
+                {this.state.cxplace.comments.map(comment =>(
+                  <div className="reviewBox">
+                    <div className="reviews">
+                     <hr></hr>
+                      {comment}
+                    </div>
+                  </div>
+                  ))}
+
+              </ListContainer>
               </div>
+
             </li>
           </div>
-
-  <ListContainer>
-    {this.state.cxplace.comments.map(comment =>(
-      <li>
-        {comment}
-      </li>
-      ))}
-
-  </ListContainer>
 
  
 
