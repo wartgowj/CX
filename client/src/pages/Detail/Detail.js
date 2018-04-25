@@ -7,7 +7,7 @@ import Modal from "../../components/Modal";
 import Moment from 'react-moment';
 import "./Detail.css";
 import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
-
+import ListContainer from "../../components/ListContainer";
 
 
 
