@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Button from "../../components/Button";
 import Header from "../../components/Header";
+import "./Home.css";
+
 
 
 
@@ -13,7 +15,7 @@ class Home extends Component {
         return (
             <div className="container">
                 <Header />
-                    <Button/>
+                        <div className="button"><Button /></div>
             </div>
         );
     }
