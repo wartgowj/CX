@@ -3,6 +3,7 @@ import "./Nav.css";
 import { Link } from "react-router-dom";
 import RatesDisplay from "../RatesDisplay";
 import NavAccountButton from "../NavAccountButton"
+import {Button} from "react-bootstrap"
 
 const Nav = ({ auth }) => {
 
@@ -34,14 +35,13 @@ const Nav = ({ auth }) => {
           <span>
             {
               !auth.isAuthenticated() && (
-                <button
+                <Button
                   id="qsLoginBtn"
-                  bsStyle="primary"
                   className="btn-margin"
                   onClick={login}
                 >
                   Log In
-                  </button>
+                  </Button>
               )
             }
             {

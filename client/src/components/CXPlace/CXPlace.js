@@ -3,7 +3,7 @@ import Modal from "../../components/Modal";
 import { Input, FormBtn } from "../../components/Form";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 import Moment from 'react-moment';
 
 class CXPlace extends Component {
@@ -86,12 +86,19 @@ class CXPlace extends Component {
 	                    <div className="address">{this.props.cxplaceAddress}</div>
 	                </div>
 	            </Link>
-	            <span class="vertical_dotted_line"></span>
+	            <span className="vertical_dotted_line"></span>
 				
 					{isAuthenticated() && (
 					<div className="buyBox">
 						<div className="buy">
-							<span className="buyGreen">Buy</span>
+							<OverlayTrigger placement="left" overlay={
+								<Tooltip id="tooltip">
+									If exchanging to dollars, this is the amount of pesos you pay per dollar.
+ 								</Tooltip>
+							}>
+								<span className="buyGreen">Buy</span>
+							</OverlayTrigger>
+							
 							<Button className="buyButton" onClick={() => this.openModal('buy')}> {this.props.cxplaceBuy}</Button>
 							<Modal isOpen={this.state.isBuyModalOpen} onClose={() => this.closeModal()}>
 								<h1>Update Rate</h1>
@@ -110,7 +117,13 @@ class CXPlace extends Component {
 							</Modal>
 						</div>
 						<div className="buy">
-							<span className="sellRed">Sell</span>
+							<OverlayTrigger placement="left" overlay={
+								<Tooltip id="tooltip">
+									If exchanging to pesos, this is the amount of pesos you get per dollar you pay.
+ 								</Tooltip>
+							}>
+								<span className="sellRed">Sell</span>
+							</OverlayTrigger>
 							<Button className="sellButton" onClick={() => this.openModal('sell')}> {this.props.cxplaceSell}</Button>
 							<Modal isOpen={this.state.isSellModalOpen} onClose={() => this.closeModal()}>
 								<h1>Update Rate</h1>
@@ -136,12 +149,24 @@ class CXPlace extends Component {
 				{!isAuthenticated() && (
 					<div className="buyBox">
 						<div className="buy">
-							<span className="buyGreen">Buy</span>
+							<OverlayTrigger placement="left" overlay={
+								<Tooltip id="tooltip">
+									If exchanging to dollars, this is the amount of pesos you pay per dollar.
+ 								</Tooltip>
+							}>
+								<span className="buyGreen">Buy</span>
+							</OverlayTrigger>
 							<p>{this.props.cxplaceBuy}</p>
 
 						</div>
 						<div className="buy">
-							<span className="sellRed">Sell</span>
+							<OverlayTrigger placement="left" overlay={
+								<Tooltip id="tooltip">
+									If exchanging to pesos, this is the amount of pesos you get per dollar you pay.
+ 								</Tooltip>
+							}>
+								<span className="sellRed">Sell</span>
+							</OverlayTrigger>
 							<p>{this.props.cxplaceSell}</p>
 						</div>
 						<div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.props.cxplaceDate} />
