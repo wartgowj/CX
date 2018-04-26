@@ -11,13 +11,26 @@ class CXPlace extends Component {
 		super(props)
 		this.state = {
 	      buy: "",
-	      sell: "",
+		  sell: "",
 	      isSellModalOpen: false,
-	      isBuyModalOpen: false,
+		  isBuyModalOpen: false,
+		  profile: {}
 	    };
 	}
 
-	
+	componentWillMount = () => {
+		const { userProfile, getProfile } = this.props.auth;
+		if (!userProfile) {
+			getProfile((err, profile) => {
+				this.setState({ profile });
+			});
+		} else {
+			this.setState({ profile: userProfile });
+			
+		}
+
+	}
+
 
 	login = () => {
 		 this.props.auth.login();
@@ -40,8 +53,9 @@ class CXPlace extends Component {
 
       console.log ('updating sell rate to ' + this.state.sell)
 
-      API.updateCxplaceRate(this.props.cxplaceId, {
-        sell: this.state.sell
+      API.updateCxplace(this.props.cxplaceId, {
+		sell: this.state.sell,
+		user: this.state.profile.nickname
       })
       .then(res => this.props.loadCxplaces())
       .catch(err => console.log(err));
@@ -50,8 +64,9 @@ class CXPlace extends Component {
 
       console.log ('updating buy rate to ' + this.state.buy)
 
-      API.updateCxplaceRate(this.props.cxplaceId, {
-        buy: this.state.buy
+      API.updateCxplace(this.props.cxplaceId, {
+		buy: this.state.buy,
+		user: this.state.profile.nickname
       })
       .then(res => this.props.loadCxplaces())
       .catch(err => console.log(err));
@@ -106,7 +121,7 @@ class CXPlace extends Component {
 									<Input
 										onChange={this.handleInputChange}
 										name="buy"
-										placeholder="Buy Rate (required)"
+										placeholder="Buy Rate"
 									/>
 									<FormBtn
 										disabled={!this.state.buy}
@@ -131,7 +146,7 @@ class CXPlace extends Component {
 									<Input
 										onChange={this.handleInputChange}
 										name="sell"
-										placeholder="Sell Rate (required)"
+										placeholder="Sell Rate"
 									/>
 									<FormBtn
 										disabled={!this.state.sell}
@@ -143,6 +158,8 @@ class CXPlace extends Component {
 						</div>
 
 						<div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.props.cxplaceDate} />
+						<br/>
+						By: {this.props.cxplaceUser}
 						</div>
 					</div>
 					)}
@@ -170,6 +187,8 @@ class CXPlace extends Component {
 							<p>{this.props.cxplaceSell}</p>
 						</div>
 						<div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.props.cxplaceDate} />
+						<br />
+						By: {this.props.cxplaceUser}
 						</div>
 					</div>
 

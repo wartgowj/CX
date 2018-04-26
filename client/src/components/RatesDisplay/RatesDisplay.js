@@ -10,16 +10,16 @@ class RatesDisplay extends Component {
 
     componentDidMount() {
         this.loadRates();
-        console.log(this.state.pesoRate)
+        
     }
 
     loadRates = () => {
-        console.log("this needs to be enabled to display correct rates!")
+        
         ExchangeRates.getRates()
             .then(results => {
                 return results.json();
             }).then(data => {
-                console.log(data)
+                
                 this.setState({ pesoRate: data.rates.MXN})
             })
     };

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Profile.css';
+import {Button} from "react-bootstrap";
 
 class Profile extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class Profile extends Component {
 
 
     componentWillMount = () => {
-        // this.setState({ profile: {} });
+
         const { userProfile, getProfile } = this.props.auth;
         if (!userProfile) {
             getProfile((err, profile) => {
@@ -39,22 +40,20 @@ class Profile extends Component {
             <div className="container">
                 <div className="profile-area">
                    
-                    {/* <Panel header="Profile"> */}
                         <img src={profile.picture} alt="profile" />
                         <h1>{profile.name}</h1>
                         <div>                          
                             <h3>username: {profile.nickname}</h3>
                         </div>
-                        {/* <pre>{JSON.stringify(profile, null, 2)}</pre> */}
-                    {/* </Panel> */}
-                    <button
+
+                    <Button
                         id="qsLoginBtn"
                         bsStyle="primary"
                         className="btn-margin"
                         onClick={this.logout}
                     >
                         Log Out
-                  </button>
+                  </Button>
                 </div>
             </div>
         );

@@ -18,17 +18,17 @@ module.exports = {
 
     update: function(req, res) {
 
-        if (req.body.buy && req.body.sell && req.body.comments) {
+        if (req.body.buy && req.body.sell) {
 
             if (req.body.comments) {
                 db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell}, $push: {comments: req.body.comments}}, {new: true})
+                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell, user: req.body.use}, $push: {comments: req.body.comments}}, {new: true})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
             } else {
                 db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell}})
+                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell, user: req.body.user}})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
@@ -36,47 +36,25 @@ module.exports = {
             
         } else if (req.body.buy) {
             db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy}})
+                .findByIdAndUpdate({ _id: req.params.id }, { $set: { buy: req.body.buy, user: req.body.user},})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
         } else if (req.body.sell) {
 
             db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, {$set: {sell: req.body.sell}})
+                .findByIdAndUpdate({ _id: req.params.id }, { $set: { sell: req.body.sell, user: req.body.user}})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
         } else if (req.body.comments) {
 
             db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, {$push: {comments: req.body.comments}}, {new: true})
+                .findByIdAndUpdate({ _id: req.params.id }, { $set: { user: req.body.user}, $push: {comments: req.body.comments}}, {new: true})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
         } 
-    },
-    save: function(req, res) {
-        db.Cxplace
-            .findOneAndUpdate({ _id: req.params.id }, req.body)
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
+
     }
 };
-
-
-// FUTURE ADD-ONS: 
-// We'd like to create admin routes that allow an admin to add or remove a cxplace
-//   create: function(req, res) {
-//     db.Book
-//       .create(req.body)
-//       .then(dbModel => res.json(dbModel))
-//       .catch(err => res.status(422).json(err));
-//   },
-//   remove: function(req, res) {
-//     db.Book
-//       .findById({ _id: req.params.id })
-//       .then(dbModel => dbModel.remove())
-//       .then(dbModel => res.json(dbModel))
-//       .catch(err => res.status(422).json(err));
-//   }

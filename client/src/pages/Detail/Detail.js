@@ -7,7 +7,6 @@ import Modal from "../../components/Modal";
 import Moment from 'react-moment';
 import "./Detail.css";
 import { Button, Tooltip, OverlayTrigger, Panel } from "react-bootstrap";
-import ListContainer from "../../components/ListContainer";
 
 
 class Detail extends Component {
@@ -17,12 +16,24 @@ class Detail extends Component {
     cxplace: {
       comments: []  
     },
+    profile: {},
     isModalOpen: false,
     open: false
   }
 }
 
+  componentWillMount = () => {
+    const { userProfile, getProfile } = this.props.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+      });
+    } else {
+      this.setState({ profile: userProfile });
 
+    }
+
+  }
 
 
   login() {
@@ -34,7 +45,7 @@ class Detail extends Component {
 
   getPlace = () => {
   API.getCxplace(this.props.match.params.id)
-      .then(res => this.setState({ cxplace: res.data, buy: "", sell: "", comments: "" }))
+      .then(res => this.setState({ cxplace: res.data, buy: "", sell: "", comments: "", user:"" }))
       .catch(err => console.log(err));
   };
 
@@ -54,7 +65,8 @@ class Detail extends Component {
         cxplace: {
           buy: this.state.buy,
           sell: this.state.sell,
-          comments: this.state.cxplace.comments
+          comments: this.state.cxplace.comments,
+          user: this.state.profile.nickname
         },
         isModalOpen: false
       })
@@ -62,7 +74,8 @@ class Detail extends Component {
       API.updateCxplace(this.props.match.params.id, {
         buy: this.state.buy,
         sell: this.state.sell,
-        comments: this.state.comments
+        comments: this.state.comments,
+        user: this.state.profile.nickname
        
       })
         .then(res => this.getPlace())
@@ -139,7 +152,10 @@ class Detail extends Component {
                   </Modal>
               </div>
               )}
-              <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/></div>
+              <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/>
+              <br />
+              By: {this.state.cxplace.user}
+              </div>
                 <div className="nameContainer">
                 <Button onClick={() => this.setState({ open: !this.state.open })}>
                   Reviews
@@ -183,21 +199,3 @@ class Detail extends Component {
 
 
 export default Detail;
-
-
-
-{/* {()=> {
-                  if (this.state.clicked){
-                    <ListContainer>
-                      {this.state.cxplace.comments.map(comment => (
-                        <div className="reviewBox">
-                          <div className="reviews">
-                            <hr></hr>
-                            {comment}
-                          </div>
-                        </div>
-                      ))}
-
-                    </ListContainer>
-                  }
-                }} */}

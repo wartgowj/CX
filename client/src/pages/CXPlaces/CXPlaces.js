@@ -6,25 +6,21 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 class CXPlaces extends Component {
+    state = {
+      cxplaces: []
+    };
+
 
 
   login() {
     this.props.auth.login();
   }
 
-   state = {
-      cxplaces: [],
-      buy: "",
-      sell: "",
-      isModalOpen: false
-    };
-
-
- 
-
-  componentDidMount() {
+  componentWillMount() {
     this.loadCxplaces();
   }
+
+  
 
 
   loadCxplaces = () => {
@@ -34,15 +30,6 @@ class CXPlaces extends Component {
       })
       .catch(err => console.log(err));
   }
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  }
-
-
 
   render() {
     return (
@@ -67,6 +54,7 @@ class CXPlaces extends Component {
                   cxplaceSell={cxplace.sell}
                   loadCxplaces={this.loadCxplaces}
                   cxplaceDate={cxplace.date}
+                  cxplaceUser={cxplace.user}
                 />
               )
             })
