@@ -48,7 +48,7 @@ class Detail extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    if (this.state.buy || this.state.sell) {
+    if (this.state.buy || this.state.sell || this.state.comments) {
 
       this.setState({
         cxplace: {
@@ -102,7 +102,7 @@ class Detail extends Component {
                 <OverlayTrigger placement="top" overlay={
                   <Tooltip id="tooltip">
                      If exchanging to pesos, this is the amount of pesos you get per dollar you pay.
-                      </Tooltip>
+                  </Tooltip>
                 }>
                   <div className="buybox sellDetail"> Sell: {this.state.cxplace.sell}</div>
                 </OverlayTrigger>
@@ -116,9 +116,6 @@ class Detail extends Component {
                     <h1>Update Rates</h1>
                       <form>
                           <Input
-                            type="number"
-                            step="0.01"
-                            pattern="^\d+(?:\.\d{1,2})?$"
                             onChange={this.handleInputChange}
                             name="buy"
                             placeholder="Buy Rate (optional)"
@@ -134,7 +131,7 @@ class Detail extends Component {
                             placeholder="Add Comments (optional)"
                             />
                           <FormBtn
-                            disabled={!(this.state.buy || this.state.sell)}
+                            disabled={!(this.state.buy || this.state.sell || this.state.comments)}
                             onClick={this.handleFormSubmit}
                           > Update                            
                           </FormBtn>
