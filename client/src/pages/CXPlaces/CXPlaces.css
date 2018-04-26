@@ -76,9 +76,12 @@ a {
 
 }
 
-/*button.sellRed.btn.btn-default{
-  margin-left:14px;
-}*/
+
+
+button.buyButton.btn.btn-default {
+  margin-left: 14px;
+}
+
 button.sellButton.btn.btn-default{
   margin-left:14px;
 
@@ -86,8 +89,8 @@ button.sellButton.btn.btn-default{
 
 .buyButton{
     color: #fff;
-    border: 1px solid #85bb65;
-    background-color: #85bb65;
+    border: 1px solid #85bb65 !important;
+    background-color: #85bb65 !important;
 }
 
 .buyButton:hover{
@@ -98,8 +101,8 @@ button.sellButton.btn.btn-default{
 }
 .sellButton{
   color: #fff;
-  border: 1px solid #c86b71;
-  background-color: #c86b71;
+  border: 1px solid #c86b71 !important;
+  background-color: #c86b71 !important;
 }
 
 .sellButton:hover{
