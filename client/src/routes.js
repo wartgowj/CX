@@ -31,7 +31,7 @@ const makeMainRoutes = ({ children }) => {
       <Router history={history}>
         <div>
           <Nav auth={auth} />
-          {/* {children} */}
+    
           <Switch>
             <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
             <Route exact path="/cxplaces/:id" render={(props) => <Detail auth={auth} {...props} />} />
