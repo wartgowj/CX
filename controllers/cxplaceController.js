@@ -18,7 +18,7 @@ module.exports = {
 
     update: function(req, res) {
 
-        if (req.body.buy && req.body.sell) {
+        if (req.body.buy && req.body.sell && req.body.comments) {
 
             if (req.body.comments) {
                 db.Cxplace
@@ -47,7 +47,14 @@ module.exports = {
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
-        }
+        } else if (req.body.comments) {
+
+            db.Cxplace
+                .findByIdAndUpdate({ _id: req.params.id }, {$push: {comments: req.body.comments}}, {new: true})
+                .then(dbModel => res.json(dbModel))
+                .catch(err => res.status(422).json(err));
+
+        } 
     },
     save: function(req, res) {
         db.Cxplace
