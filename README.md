@@ -13,7 +13,9 @@ Click on the "Get Rates" button, to see a list of exchanges of the area
 If you visit one of the exchanges and the current listed rates are not correct, you can update them!- you must be logged in for this
 
 Click on the name of the exchange you would like to update. the detail for the exchange will appear as shown below.
+![alt text](https://github.com/wartgowj/CX/blob/jaime/client/src/utils/readme_1.png "Detail page image ")
 
 Click of the Update Rates button. This will allow you to update the rates and leave a comment if you'd like. 
+![alt text](https://github.com/wartgowj/CX/blob/jaime/client/src/utils/readme_2.png "Detail page image ")
 
 And you're done!! Take pride in the fact you are helping the community to save money!!
