@@ -31,7 +31,6 @@ const Nav = ({ auth }) => {
           </Link>
         </div>
         <div className="style__right___memgl">
-            {/* <span className="spliter"></span> */}
           <span>
             {
               !auth.isAuthenticated() && (
