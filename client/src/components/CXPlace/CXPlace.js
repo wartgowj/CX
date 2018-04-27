@@ -189,7 +189,7 @@ class CXPlace extends Component {
 							</OverlayTrigger>
 							<p>${this.props.cxplaceSell}</p>
 						</div>
-						<div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.props.cxplaceDate} />
+						<div className="lastUpdated">Last updated: <Moment fromNow>{this.props.cxplaceDate}</Moment>
 						<br />
 						By: {this.props.cxplaceUser}
 						</div>

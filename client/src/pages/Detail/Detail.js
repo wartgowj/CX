@@ -64,7 +64,7 @@ class Detail extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-
+    
     if (this.state.buy || this.state.sell || this.state.comments) {
 
       this.setState({
@@ -80,7 +80,7 @@ class Detail extends Component {
       API.updateCxplace(this.props.match.params.id, {
         buy: this.state.buy,
         sell: this.state.sell,
-        comments: this.state.comments,
+        comments: this.state.comments + " -- " + this.state.profile.nickname,
         user: this.state.profile.nickname,
         date: Date.now()
        
