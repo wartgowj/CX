@@ -109,7 +109,7 @@ class Detail extends Component {
                     If exchanging to dollars, this is the amount of pesos you pay per dollar.
                       </Tooltip>
                   }>
-                  <div className="buybox buyDetail">Buy: {this.state.cxplace.buy}</div>
+                  <div className="buybox buyDetail">Buy: ${this.state.cxplace.buy}</div>
                   </OverlayTrigger>
 
                 <OverlayTrigger placement="top" overlay={
@@ -117,7 +117,7 @@ class Detail extends Component {
                      If exchanging to pesos, this is the amount of pesos you get per dollar you pay.
                   </Tooltip>
                 }>
-                  <div className="buybox sellDetail"> Sell: {this.state.cxplace.sell}</div>
+                  <div className="buybox sellDetail"> Sell: ${this.state.cxplace.sell}</div>
                 </OverlayTrigger>
             
                   </div>

@@ -12,6 +12,7 @@ class CXPlace extends Component {
 		this.state = {
 	      buy: "",
 		  sell: "",
+		  date: "",
 	      isSellModalOpen: false,
 		  isBuyModalOpen: false,
 		  profile: {}
@@ -55,7 +56,8 @@ class CXPlace extends Component {
 
       API.updateCxplace(this.props.cxplaceId, {
 		sell: this.state.sell,
-		user: this.state.profile.nickname
+		user: this.state.profile.nickname,
+		date: Date.now
       })
       .then(res => this.props.loadCxplaces())
       .catch(err => console.log(err));
@@ -66,7 +68,8 @@ class CXPlace extends Component {
 
       API.updateCxplace(this.props.cxplaceId, {
 		buy: this.state.buy,
-		user: this.state.profile.nickname
+		user: this.state.profile.nickname,
+		date: Date.now
       })
       .then(res => this.props.loadCxplaces())
       .catch(err => console.log(err));
@@ -114,7 +117,7 @@ class CXPlace extends Component {
 								<span className="buyGreen">Buy</span>
 							</OverlayTrigger>
 							
-							<Button className="buyButton" onClick={() => this.openModal('buy')}> {this.props.cxplaceBuy}</Button>
+							<Button className="buyButton" onClick={() => this.openModal('buy')}> ${this.props.cxplaceBuy}</Button>
 							<Modal isOpen={this.state.isBuyModalOpen} onClose={() => this.closeModal()}>
 								<h1>Update Rate</h1>
 								<form>
@@ -139,7 +142,7 @@ class CXPlace extends Component {
 							}>
 								<span className="sellRed">Sell</span>
 							</OverlayTrigger>
-							<Button className="sellButton" onClick={() => this.openModal('sell')}> {this.props.cxplaceSell}</Button>
+							<Button className="sellButton" onClick={() => this.openModal('sell')}> ${this.props.cxplaceSell}</Button>
 							<Modal isOpen={this.state.isSellModalOpen} onClose={() => this.closeModal()}>
 								<h1>Update Rate</h1>
 								<form>
@@ -173,7 +176,7 @@ class CXPlace extends Component {
 							}>
 								<span className="buyGreen">Buy</span>
 							</OverlayTrigger>
-							<p>{this.props.cxplaceBuy}</p>
+							<p>${this.props.cxplaceBuy}</p>
 
 						</div>
 						<div className="buy">
@@ -184,7 +187,7 @@ class CXPlace extends Component {
 							}>
 								<span className="sellRed">Sell</span>
 							</OverlayTrigger>
-							<p>{this.props.cxplaceSell}</p>
+							<p>${this.props.cxplaceSell}</p>
 						</div>
 						<div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.props.cxplaceDate} />
 						<br />
