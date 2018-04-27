@@ -4,8 +4,9 @@ CX is a user updated site with one objective in mind: **To help you find the bes
 
 To fully take advantage of the benefits of CX, please login to create an account. You can also login with Google!
 
-If you prefer to remain a guest, that's alright too. You will be unable to submit prices and comments but can view exchanges and rates.
+If you prefer to remain a guest, that's alright too. You will be unable to submit rates and comments but can still view exchanges and rates.
 
+Here's a link to the CX page:  
 [CX Currency Exchange](https://cxchange.herokuapp.com "link to CX Currency Exchange")
 
 Click on the "Get Rates" button, to see a list of exchanges in the area
@@ -24,4 +25,9 @@ Click on the Update Rates button. This will allow you to update the rates and le
 And you're done!! Take pride in the fact you are helping the community to save money!!
 
 Contributors:
-[Jaime](https://github.com/wartgowj "Jaime's Github")
+
+[Jaime Wartgow](https://github.com/wartgowj "Jaime's Github")   
+[Elma Gonzalez](https://github.com/eyl91 "Elma's Github")  
+[Allan Tomas](https://github.com/RichardTomas "Allan's Github")  
+[Jens Hoffmann](https://github.com/jens87alpen "Jens' Github")  
+[Tom Hughes](https://github.com/tomkhughes "Tom's Github")
