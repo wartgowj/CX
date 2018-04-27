@@ -98,7 +98,7 @@ export default class Map extends Component {
     render() {
         const style = { //sets size of map//
             width: '80vw', 
-            height: '90vh',
+            height: '80vh',
             margin: 'auto' 
         }
 

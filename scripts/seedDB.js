@@ -24,7 +24,7 @@ const cxplaceSeed = [
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "http://www.dolarex.com/voxfiles/skins/skn-dolarex/htmls/images/dolarex-logo.png",
     icon:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfej-9Cgx0-SG9EdJE6yKIBH94W9q-OyQPrzCymHxmebHUDQsW",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -40,7 +40,7 @@ const cxplaceSeed = [
     hours: "Monday to Sunday, 8:00AM to 7:00PM",
     image: "http://www.coosanjer.com.gt/wp-content/uploads/2017/02/Golden-Money-green-logo-small.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXFHNzGJb0_Dh8VbkAha-ckiHV24LLXNBkd4iU0eQBDT34AsdQ",
-    comments:["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -56,7 +56,7 @@ const cxplaceSeed = [
     hours: "Monday to Friday, 9:00AM to 5:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV99yMLY5Gt5YaX5SZlLT9SdzoN0KDcnNocjVsfQ8V5OzIg2cd",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -72,7 +72,7 @@ const cxplaceSeed = [
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTn1uQqeibeUKmXdAOqGWDkqeHWdjdvi8LeBEy10xAfTCBW236sA",
-    comments: ["This place is awesome", "Highway robbery!"],	
+    comments: [],	
     user: null,	
     date: new Date(Date.now())
   },
@@ -88,7 +88,7 @@ const cxplaceSeed = [
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "http://mallsmexico.com/imagenes/2016/02/23203_Intercam.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2hmRwShEuR7u-0Z6X4NL9cel321ZZAbFfpGZfqzZnR012-vlo",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -104,7 +104,7 @@ const cxplaceSeed = [
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiVO7me7QhRzYWod-Nc1F6RbRZWuB7P76-ckvB6HX_hf1cHk8OBg",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -120,7 +120,7 @@ const cxplaceSeed = [
     hours: "Open 24 Hours",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF9vnASJF15JNI6KA06Nl0j_niwAjK-TB9fySpgGBDJ1yMUoCk",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -136,7 +136,7 @@ const cxplaceSeed = [
     hours: "Monday to Friday, 10:00AM to 9:00PM",
     image: "https://media.glassdoor.com/sqll/751786/currency-exchange-international-squarelogo-1429768257677.png",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvbByrJHxOvPkxpzgnMVbj0c8gpyjqXxtKe1CjPUZBOiUMP2xa",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -152,7 +152,7 @@ const cxplaceSeed = [
     hours: "Monday to Sunday, 7:30AM to 7:30PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXMxwynSYC4thHsZt4vmHPMxZsOpccz1uWPZtro-Y5CURxSqQUoQ",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -168,7 +168,7 @@ const cxplaceSeed = [
     hours: "Monday to Sunday, 9:00AM to 8:00PM",
     image: "https://www.expresspawn.com/images/logo.png",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThF5eLfdHPwR2ak6cb8uGATP82i04z2H0kislLqt3apb5H0Y9i",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -184,7 +184,7 @@ const cxplaceSeed = [
     hours: "Monday to Sunday, 9:00AM to 8:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6iCPUkbrfjamxITI7PFbvS4Cwh4WQGfad42cbBhUg9gF4KdxM",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },
@@ -200,7 +200,7 @@ const cxplaceSeed = [
     hours: "Monday to Friday, 7:00AM to 4:00PM",
     image: "https://image.freepik.com/free-vector/modern-money-changer-logo-template-designs_7649-31.jpg",
     icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZEi17i_axmt7BugdLzsSMG8i3wYEHsMMRt-i7sSFNveIPoZip",
-    comments: ["This place is awesome", "Highway robbery!"],
+    comments: [],
     user: null,
     date: new Date(Date.now())
   },

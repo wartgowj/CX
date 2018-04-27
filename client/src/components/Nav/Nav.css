@@ -2,6 +2,10 @@
     border-bottom: none;
 }
 
+.btn-margin {
+    background-color: red;
+}
+
 .ratesDisplay{
     width: 39rem;
     color: black;
@@ -352,17 +356,17 @@ body {
 }
 .btn-margin {
     color: whitesmoke;
-    background-color: #4183c4!important;
+    background-color: transparent !important;
     text-decoration: none;
     background: 0 0;
     padding: 8px;
-    width: 20%;
+    width: 15%;
     text-transform: none;
 
 }
 .btn-margin:hover {
     color: whitesmoke!important;
-    background-color: transparent!important;
+    background-color: #4183c4 !important;
     border:2px solid whitesmoke;
 }
 @media (min-width: 320px) and (max-width: 579px) {
