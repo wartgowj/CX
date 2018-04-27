@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class Modal extends React.Component {
     render() {
       if (this.props.isOpen === false)
@@ -13,7 +14,7 @@ class Modal extends React.Component {
         zIndex: '9999',
         background: '#fff',
         boxShadow: 'black 3px 3px 6px',
-        width: '500px'        
+        width: '300px'        
       }
 
       if (this.props.width && this.props.height) {
