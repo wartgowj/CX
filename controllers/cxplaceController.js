@@ -22,13 +22,13 @@ module.exports = {
 
             if (req.body.comments) {
                 db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell, user: req.body.use}, $push: {comments: req.body.comments}}, {new: true})
-                .then(dbModel => res.json(dbModel))
-                .catch(err => res.status(422).json(err));
+                    .findByIdAndUpdate({ _id: req.params.id }, { $set: { buy: req.body.buy, sell: req.body.sell, user: req.body.user, date: req.body.date }, $push: { comments: req.body.comments } }, { new: true })
+                    .then(dbModel => res.json(dbModel))
+                    .catch(err => res.status(422).json(err));
 
             } else {
                 db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, {$set: {buy: req.body.buy, sell: req.body.sell, user: req.body.user}})
+                    .findByIdAndUpdate({ _id: req.params.id }, { $set: { buy: req.body.buy, sell: req.body.sell, user: req.body.user, date: req.body.date}})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
@@ -36,21 +36,21 @@ module.exports = {
             
         } else if (req.body.buy) {
             db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, { $set: { buy: req.body.buy, user: req.body.user},})
+                .findByIdAndUpdate({ _id: req.params.id }, { $set: { buy: req.body.buy, user: req.body.user, date: req.body.date}})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
         } else if (req.body.sell) {
 
             db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, { $set: { sell: req.body.sell, user: req.body.user}})
+                .findByIdAndUpdate({ _id: req.params.id }, { $set: { sell: req.body.sell, user: req.body.user, date: req.body.date}})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
         } else if (req.body.comments) {
 
             db.Cxplace
-                .findByIdAndUpdate({ _id: req.params.id }, { $set: { user: req.body.user}, $push: {comments: req.body.comments}}, {new: true})
+                .findByIdAndUpdate({ _id: req.params.id }, {$push: {comments: req.body.comments}}, {new: true})
                 .then(dbModel => res.json(dbModel))
                 .catch(err => res.status(422).json(err));
 
