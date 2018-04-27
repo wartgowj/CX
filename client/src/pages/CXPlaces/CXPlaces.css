@@ -168,6 +168,15 @@ button.sellButton.btn.btn-default{
     background-color: #a1c6eb;
     background-image: none;
   }
+  .cxName{
+    font-size: 20px;
+  }
+  .address{
+    font-size: 12px;
+  }
+  .modal{
+    width: 300px!important;
+  }
 }
 /*iphone X*/
 @media only screen 
@@ -183,6 +192,7 @@ button.sellButton.btn.btn-default{
       .listDetail{
             width: 84%!important;
       }
+      
 }
 
 /*IPAD*/

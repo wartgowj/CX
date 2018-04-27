@@ -142,8 +142,10 @@ button.btn{
     margin-top: 20px;
     }
     .backButt {
-    margin-left: 54%!important;
     margin-top: 0%!important;
+    }
+    .nameContainer {
+    width: 255px;
     }
     
 }
