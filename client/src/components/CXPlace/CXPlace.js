@@ -16,7 +16,9 @@ class CXPlace extends Component {
 	      isSellModalOpen: false,
 		  isBuyModalOpen: false,
 		  profile: {}
-	    };
+		};
+		
+		this.handleRateUpdate = this.handleRateUpdate.bind(this);
 	}
 
 	componentWillMount = () => {
@@ -59,7 +61,11 @@ class CXPlace extends Component {
 		user: this.state.profile.nickname,
 		date: Date.now()
       })
-      .then(res => this.props.loadCxplaces())
+	  .then(res => {
+		  this.props.loadCxplaces();
+		  this.setState({ sell: "" });
+	  })
+	
       .catch(err => console.log(err));
 
     } else if (this.state.buy > 0){
@@ -71,7 +77,10 @@ class CXPlace extends Component {
 		user: this.state.profile.nickname,
 		date: Date.now()
       })
-      .then(res => this.props.loadCxplaces())
+      .then(res => {
+		  this.props.loadCxplaces();
+		  this.setState({ buy: "" });
+	  })
       .catch(err => console.log(err));
 
     }
