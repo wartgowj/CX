@@ -57,7 +57,7 @@ class CXPlace extends Component {
       API.updateCxplace(this.props.cxplaceId, {
 		sell: this.state.sell,
 		user: this.state.profile.nickname,
-		date: Date.now
+		date: Date.now()
       })
       .then(res => this.props.loadCxplaces())
       .catch(err => console.log(err));
@@ -69,7 +69,7 @@ class CXPlace extends Component {
       API.updateCxplace(this.props.cxplaceId, {
 		buy: this.state.buy,
 		user: this.state.profile.nickname,
-		date: Date.now
+		date: Date.now()
       })
       .then(res => this.props.loadCxplaces())
       .catch(err => console.log(err));
@@ -160,7 +160,7 @@ class CXPlace extends Component {
 							</Modal>
 						</div>
 
-						<div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.props.cxplaceDate} />
+						<div className="lastUpdated">Last updated: <Moment fromNow>{this.props.cxplaceDate}</Moment>
 						<br/>
 						By: {this.props.cxplaceUser}
 						</div>

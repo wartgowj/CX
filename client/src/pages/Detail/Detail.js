@@ -32,8 +32,11 @@ class Detail extends Component {
       this.setState({ profile: userProfile });
 
     }
+    
 
   }
+
+  
 
 
   login() {
@@ -45,7 +48,10 @@ class Detail extends Component {
 
   getPlace = () => {
   API.getCxplace(this.props.match.params.id)
-      .then(res => this.setState({ cxplace: res.data, buy: "", sell: "", comments: "", user:"", date:"" }))
+      .then(res => {
+        this.setState({ cxplace: res.data, buy: "", sell: "", comments: "", user:""})
+        console.log(this.state.cxplace.date)
+      })
       .catch(err => console.log(err));
   };
 
@@ -66,8 +72,7 @@ class Detail extends Component {
           buy: this.state.buy,
           sell: this.state.sell,
           comments: this.state.cxplace.comments,
-          user: this.state.profile.nickname,
-          date: Date.now
+          user: this.state.profile.nickname
         },
         isModalOpen: false
       })
@@ -77,12 +82,15 @@ class Detail extends Component {
         sell: this.state.sell,
         comments: this.state.comments,
         user: this.state.profile.nickname,
-        date: this.state.date
+        date: Date.now()
        
       })
         .then(res => this.getPlace())
         .catch(err => console.log(err));
     }
+
+    console.log(this.state.cxplace.date)
+
   };
 
   
@@ -154,7 +162,7 @@ class Detail extends Component {
                   </Modal>
               </div>
               )}
-              <div className="lastUpdated">Last updated: <Moment format="HH:mm DD/MM/YY" date={this.state.cxplace.date}/>
+              <div className="lastUpdated">Last updated: <Moment fromNow>{this.state.cxplace.date}</Moment>
               <br />
               By: {this.state.cxplace.user}
               </div>
