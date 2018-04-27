@@ -80,7 +80,7 @@ class Detail extends Component {
       API.updateCxplace(this.props.match.params.id, {
         buy: this.state.buy,
         sell: this.state.sell,
-        comments: this.state.comments + " -- " + this.state.profile.nickname,
+        comments: this.state.comments + " — " + this.state.profile.nickname,
         user: this.state.profile.nickname,
         date: Date.now()
        
