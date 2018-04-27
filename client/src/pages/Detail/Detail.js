@@ -45,7 +45,7 @@ class Detail extends Component {
 
   getPlace = () => {
   API.getCxplace(this.props.match.params.id)
-      .then(res => this.setState({ cxplace: res.data, buy: "", sell: "", comments: "", user:"" }))
+      .then(res => this.setState({ cxplace: res.data, buy: "", sell: "", comments: "", user:"", date:"" }))
       .catch(err => console.log(err));
   };
 
@@ -66,7 +66,8 @@ class Detail extends Component {
           buy: this.state.buy,
           sell: this.state.sell,
           comments: this.state.cxplace.comments,
-          user: this.state.profile.nickname
+          user: this.state.profile.nickname,
+          date: Date.now
         },
         isModalOpen: false
       })
@@ -75,7 +76,8 @@ class Detail extends Component {
         buy: this.state.buy,
         sell: this.state.sell,
         comments: this.state.comments,
-        user: this.state.profile.nickname
+        user: this.state.profile.nickname,
+        date: this.state.date
        
       })
         .then(res => this.getPlace())
