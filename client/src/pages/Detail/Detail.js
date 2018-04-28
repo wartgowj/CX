@@ -113,6 +113,7 @@ class Detail extends Component {
                   <div className="info">{this.state.cxplace.hours}</div>
                   <div className="info">{this.state.cxplace.address}</div>
                   <div className="info">{this.state.cxplace.phone}</div>
+                  <div className="info">Commission: {this.state.cxplace.commission}</div>
                 <div className="buySellSort">
                   <OverlayTrigger placement="top" overlay={
                   <Tooltip id="tooltip">
