@@ -1,58 +1,62 @@
-
-.logoStyle{
+.logoStyle {
 
     height: 250px;
     width: 250px;
     margin-right: 20px;
 }
+
 .info {
     color: #63666a;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     padding: 3px;
 }
+
 form {
-	padding: 40px;
-	width: 100%;
-}
-h1 {
-	margin-top: 10px;
-	font-family: 'Open Sans','Helvetica Neue',Arial,Helvetica,sans-serif;
-	font-weight: 700;
-	text-align: center;
-}
-.btn {
-	
-	text-align: center !important;
+    padding: 40px;
+    width: 100%;
 }
 
-.backButt{
+h1 {
+    margin-top: 10px;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn {
+
+    text-align: center !important;
+}
+
+.backButt {
 
     position: relative;
     background: #fff;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     margin: 1rem 0;
     margin-left: 66%;
     padding: 1em 1em;
     border-radius: .28571429rem;
-    border: 1px solid rgba(34,36,38,.15);
+    border: 1px solid rgba(34, 36, 38, .15);
     color: black;
     border: 1px solid whitesmoke;
     background-color: whitesmoke;
-
 }
-.backButt{
+
+.backButt {
     margin-left: 5px;
     text-transform: none;
     color: #0000009e;
 }
 
-.flex{
+.flex {
     display: grid;
     flex-direction: column-reverse;
 }
-.centerPage{
+
+.centerPage {
     width: 200px;
     height: 50%;
     position: absolute;
@@ -63,90 +67,90 @@ h1 {
     margin: auto;
 }
 
-.font{
+.font {
     margin-left: 25px;
 }
 
-.buybox{
+.buybox {
     position: relative;
     background: #fff;
     margin: 1rem 0;
     padding: 1em 1em;
     border-radius: .28571429rem;
-    border: 1px solid rgba(34,36,38,.15);
+    border: 1px solid rgba(34, 36, 38, .15);
     margin-right: 10px;
-
 }
 
-.buySellSort{
-    display:flex;
+.buySellSort {
+    display: flex;
 }
 
-.updateButton{
+.updateButton {
     position: relative;
     background: #fff;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     margin: 1rem 0;
     border-radius: .28571429rem;
-    border: 1px solid rgba(34,36,38,.15);
+    border: 1px solid rgba(34, 36, 38, .15);
     color: black;
     border: 1px solid whitesmoke;
     text-transform: none;
     padding: 23px 41px;
 }
-.updateButton:hover{
-    color:whitesmoke;
-    background-color:#808080;
 
+.updateButton:hover {
+    color: whitesmoke;
+    background-color: #808080;
 }
 
-.buyDetail{
+.buyDetail {
     color: #fff;
     border: 1px solid #85bb65;
     background-color: #85bb65;
 }
-.sellDetail{
+
+.sellDetail {
     color: #fff;
     border: 1px solid #c86b71;
     background-color: #c86b71;
 }
-button.btn{
-        color: black;
+
+button.btn {
+    color: black;
     text-transform: none;
     position: relative;
     background: #fff;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     margin: 1rem 0;
     border-radius: .28571429rem;
-    border: 1px solid rgba(34,36,38,.15);
+    border: 1px solid rgba(34, 36, 38, .15);
     color: black;
     border: 1px solid whitesmoke;
 }
 
 @media (min-width: 320px) and (max-width: 579px) {
-    .listDetail{
-    display: flex!important;
-    flex-direction: column!important;
-    margin-left: 13%!important;
-    width: 77%!important;
+    .listDetail {
+        display: flex!important;
+        flex-direction: column!important;
+        margin-left: 13%!important;
+        width: 77%!important;
     }
-  .flex{
-    display: block;
-  }
-  .logoStyle {
-    height: 150px;
-    width: 150px;
-    margin-left: 65px;
-    margin-top: 20px;
+    .flex {
+        display: block;
+    }
+    .logoStyle {
+        height: 150px;
+        width: 150px;
+        margin-left: 65px;
+        margin-top: 20px;
     }
     .backButt {
-    margin-top: 0%!important;
+        margin-top: 0%!important;
     }
     .nameContainer {
-    width: 255px;
+        width: 255px;
     }
-    
+   
 }
-

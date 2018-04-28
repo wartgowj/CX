@@ -168,15 +168,13 @@ button.sellButton.btn.btn-default{
     background-color: #a1c6eb;
     background-image: none;
   }
-  .cxName{
+  .cxName {
     font-size: 20px;
   }
-  .address{
-    font-size: 12px;
+  .address {
+    font-size: 10px;
   }
-  .modal{
-    width: 300px!important;
-  }
+
 }
 /*iphone X*/
 @media only screen 
