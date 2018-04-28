@@ -203,13 +203,20 @@ button.sellButton.btn.btn-default{
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)  {
     .listBox{
-    width: 72%;
-    margin-left: 7%;
+    width: 80%;
+    margin: auto;
     }
     .mapButton {
       width: 10.5%;
-      left: 69.5%;
+      left: 80%;
 
+    }
+    a {
+      width: inherit;
+    }
+
+    .nameContainer {
+      width: 100%;
     }
 
 }
