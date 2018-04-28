@@ -14,7 +14,7 @@ class Modal extends React.Component {
         zIndex: '9999',
         background: '#fff',
         boxShadow: 'black 3px 3px 6px',
-        width: '300px'        
+        width: '80%'        
       }
 
       if (this.props.width && this.props.height) {
