@@ -168,7 +168,7 @@ class Detail extends Component {
               </div>
                 <div className="nameContainer">
                 <Button onClick={() => this.setState({ open: !this.state.open })}>
-                  Reviews
+                  Comments
                 </Button>
                 <br />
                 <Panel id="collapsible-panel-example-1" expanded={this.state.open}>

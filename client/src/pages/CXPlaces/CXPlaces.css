@@ -157,8 +157,8 @@ button.sellButton.btn.btn-default{
     display: none;
   }
   .mapButton{
-    left: 71.5%;
-    width:20%;
+    left: 70%;
+    width:22%;
   }
   .backButton{
     left: 68.5%;
@@ -166,7 +166,7 @@ button.sellButton.btn.btn-default{
   }
   body {
     background-color: #a1c6eb;
-    background-image: none;
+    background-image: none !important;
   }
   .cxName{
     font-size: 20px;
