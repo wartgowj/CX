@@ -131,14 +131,15 @@ button.btn {
 }
 
 @media (min-width: 320px) and (max-width: 579px) {
-    .listDetail {
-        display: flex!important;
-        flex-direction: column!important;
-        margin-left: 13%!important;
-        width: 77%!important;
-    }
+
     .flex {
         display: block;
+  }
+    .listDetail{
+    display: flex!important;
+    flex-direction: column!important;
+    margin-left: 5%!important;
+    width: 90%!important;
     }
     .logoStyle {
         height: 150px;
@@ -152,5 +153,9 @@ button.btn {
     .nameContainer {
         width: 255px;
     }
-   
+
+    .panel-default {
+        width:95%;
+    }
 }
+

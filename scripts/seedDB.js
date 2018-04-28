@@ -190,7 +190,7 @@ const cxplaceSeed = [
   },
   {
     name: "Zulemy",
-    address: "Blvd.Agua Caliente 11050 22014 Tijuana, Baja California Mexico",
+    address: "Blvd.Agua Caliente 11050 22014 Tijuana, Mexico",
     lat: "32.514901",
     lng: "-117.011578",
     phone: "+52 664 972 9158",
