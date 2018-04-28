@@ -47,7 +47,7 @@ a {
 } 
 
 .nameContainer{
-	width: 350px;
+	width: 500px;
 }
 
 .buyBox {
@@ -176,6 +176,9 @@ button.sellButton.btn.btn-default{
   }
   .modal{
     width: 300px!important;
+  }
+  .nameContainer{
+    width:320px;
   }
 }
 /*iphone X*/
