@@ -22,14 +22,12 @@ export default class Map extends Component {
 
     componentDidUpdate(){
         this.loadMap();
-        console.log(this.state.cxplaces)
     }
 
     getUserLocation = () => {
         MAP.getLocation((position) => {
             this.setState({ userLat: position.coords.latitude });
             this.setState({ userLng: position.coords.longitude });
-            console.log(this.state.userLat, this.state.userLng);
         })
     }
 
