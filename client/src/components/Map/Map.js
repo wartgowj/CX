@@ -48,7 +48,7 @@ export default class Map extends Component {
             const node = ReactDOM.findDOMNode(mapRef);
 
             const mapConfig = Object.assign({}, {
-                center: { lat: 32.7102, lng: -117.10593 },
+                center: { lat: this.state.userLat, lng: this.state.userLng },
                 zoom: 11
             })
 
@@ -57,7 +57,7 @@ export default class Map extends Component {
             // Creates a marker at the users location
             const usericon = {
                 url: "https://www.shareicon.net/data/2015/11/26/678308_man_512x512.png",
-                scaledSize: new google.maps.Size(60, 60),
+                scaledSize: new google.maps.Size(40, 40),
             };
             const userMarker = new google.maps.Marker({
                 position: { lat: this.state.userLat, lng: this.state.userLng},
@@ -75,7 +75,7 @@ export default class Map extends Component {
             this.state.cxplaces.forEach(cxplace => {
                 let icon = {
                     url: cxplace.icon, // url
-                    scaledSize: new google.maps.Size(40, 40),
+                    scaledSize: new google.maps.Size(30, 30),
                 };
                 const marker = new google.maps.Marker({
                     position: { lat: parseFloat(cxplace.lat), lng: parseFloat(cxplace.lng) },
