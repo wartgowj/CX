@@ -22,6 +22,7 @@ class Detail extends Component {
   }
 }
 
+
   componentWillMount = () => {
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
@@ -36,12 +37,11 @@ class Detail extends Component {
 
   }
 
-  
-
-
-  login() {
+  login = () => {
     this.props.auth.login();
   }
+
+
   componentDidMount() {
     this.getPlace();
   }
@@ -64,8 +64,10 @@ class Detail extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+
+    let regexp = /^\d{2}(\.\d{1,2})?$/;
     
-    if (this.state.buy || this.state.sell || this.state.comments) {
+    if (regexp.test(this.state.buy) || regexp.test(this.state.sell) || this.state.comments) {
 
       this.setState({
         cxplace: {
@@ -96,6 +98,7 @@ class Detail extends Component {
   
   render() {
     const { isAuthenticated } = this.props.auth;
+    let regexp = /^\d{2}(\.\d{1,2})?$/;
     return (
       <div>
         
@@ -155,7 +158,9 @@ class Detail extends Component {
                             placeholder="Add Comments (optional)"
                             />
                           <FormBtn
-                            disabled={!(this.state.buy || this.state.sell || this.state.comments)}
+                            disabled = {
+                                !(regexp.test(this.state.buy) || regexp.test(this.state.sell) || this.state.comments)
+                            }
                             onClick={this.handleFormSubmit}
                           > Update                            
                           </FormBtn>
@@ -163,6 +168,14 @@ class Detail extends Component {
                   </Modal>
               </div>
               )}
+              {
+                !isAuthenticated() && (
+              < Button
+              className = "btn-margin-detail"
+              onClick = {
+                this.login
+              } > Log in to update rates </ Button>
+                )}
               <div className="lastUpdated">Last updated: <Moment fromNow>{this.state.cxplace.date}</Moment>
               <br />
               By: {this.state.cxplace.user}
@@ -193,8 +206,6 @@ class Detail extends Component {
 
             </li>
           </div>
-
- 
 
       </div>
     );
