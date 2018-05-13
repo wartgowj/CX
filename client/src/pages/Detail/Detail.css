@@ -48,6 +48,17 @@ h1 {
     color: #0000009e;
 }
 
+.btn-margin-detail {
+    background-color: transparent !important;
+    text-decoration: none;
+    background: 0 0;
+    padding: 8px;
+}
+.btn-margin-detail:hover {
+    background-color: #4183c4 !important;
+    border: 2px solid whitesmoke;
+}
+
 .flex{
     display: grid;
     flex-direction: column-reverse;
