@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Button, Tooltip, OverlayTrigger } from "react-bootstrap";
 import Moment from 'react-moment';
 
+
 class CXPlace extends Component {
 	constructor(props) {
 		super(props)
@@ -19,6 +20,7 @@ class CXPlace extends Component {
 		};
 		
 		this.handleRateUpdate = this.handleRateUpdate.bind(this);
+		
 	}
 
 	componentWillMount = () => {
@@ -47,20 +49,24 @@ class CXPlace extends Component {
 	}
 
 	handleRateUpdate = event => {
+	let regexp = /^\d{2}(\.\d{1,2})?$/;
 
     event.preventDefault();
 
-    this.closeModal();
-
-    if (this.state.sell > 0) {
-
-      console.log ('updating sell rate to ' + this.state.sell)
+		if (regexp.test(this.state.sell)) {
+			
+	  
+	  console.log ('updating sell rate to ' + this.state.sell);
+	  
 
       API.updateCxplace(this.props.cxplaceId, {
 		sell: this.state.sell,
 		user: this.state.profile.nickname,
 		date: Date.now()
-      })
+	  }
+	
+	)
+	  
 	  .then(res => {
 		  this.props.loadCxplaces();
 		  this.setState({ sell: "" });
@@ -68,7 +74,7 @@ class CXPlace extends Component {
 	
       .catch(err => console.log(err));
 
-    } else if (this.state.buy > 0){
+		} else if (regexp.test(this.state.buy)){
 
       console.log ('updating buy rate to ' + this.state.buy)
 
@@ -78,33 +84,36 @@ class CXPlace extends Component {
 		date: Date.now()
       })
       .then(res => {
+		  console.log(this.state.disabled);
 		  this.props.loadCxplaces();
-		  this.setState({ buy: "" });
+		  this.setState({ buy: ""});
 	  })
       .catch(err => console.log(err));
 
-    }
+	} 
+	this.closeModal();
       
   }
 
   openModal(which) {
+
   	if (which === 'buy') {
-  		this.setState({ isBuyModalOpen: true })
+		this.setState({ isBuyModalOpen: true })
   	} else if (which === 'sell') {
-  		this.setState({ isSellModalOpen: true })
+		this.setState({ isSellModalOpen: true })
   	}
-    
   }
 
   closeModal() {
     this.setState({ 
     	isBuyModalOpen: false,
-    	isSellModalOpen: false,
+		isSellModalOpen: false
     })
   }
 
 	render() {
 		const { isAuthenticated } = this.props.auth;
+		let regexp = /^\d{2}(\.\d{1,2})?$/;
 		return (
 	        <li className="listBox list" id="listDetail" key={this.props.cxplaceId}>
 	            <Link to={"/cxplaces/" + this.props.cxplaceId}>
@@ -135,8 +144,8 @@ class CXPlace extends Component {
 										name="buy"
 										placeholder="Buy Rate"
 									/>
-									<FormBtn
-										disabled={!this.state.buy}
+								<FormBtn
+										disabled = {!regexp.test(this.state.buy)}
 										onClick={this.handleRateUpdate}>
 										Update
 	                            </FormBtn>
@@ -161,7 +170,7 @@ class CXPlace extends Component {
 										placeholder="Sell Rate"
 									/>
 									<FormBtn
-										disabled={!this.state.sell}
+										disabled = {!regexp.test(this.state.sell)}
 										onClick={this.handleRateUpdate}>
 										Update
 	                            </FormBtn>

@@ -64,8 +64,10 @@ class Detail extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+
+    let regexp = /^\d{2}(\.\d{1,2})?$/;
     
-    if (this.state.buy || this.state.sell || this.state.comments) {
+    if (regexp.test(this.state.buy) || regexp.test(this.state.sell) || this.state.comments) {
 
       this.setState({
         cxplace: {
@@ -96,6 +98,7 @@ class Detail extends Component {
   
   render() {
     const { isAuthenticated } = this.props.auth;
+    let regexp = /^\d{2}(\.\d{1,2})?$/;
     return (
       <div>
         
@@ -155,7 +158,9 @@ class Detail extends Component {
                             placeholder="Add Comments (optional)"
                             />
                           <FormBtn
-                            disabled={!(this.state.buy || this.state.sell || this.state.comments)}
+                            disabled = {
+                                !(regexp.test(this.state.buy) || regexp.test(this.state.sell) || this.state.comments)
+                            }
                             onClick={this.handleFormSubmit}
                           > Update                            
                           </FormBtn>
