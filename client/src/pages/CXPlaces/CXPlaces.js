@@ -3,7 +3,12 @@ import API from "../../utils/API";
 import "./CXPlaces.css";
 import CXPlace from "../../components/CXPlace";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import {
+  Button,
+  DropdownButton,
+  MenuItem,
+  ButtonToolbar
+} from "react-bootstrap";
 
 class CXPlaces extends Component {
     state = {
@@ -17,16 +22,21 @@ class CXPlaces extends Component {
   }
 
   componentWillMount() {
-    this.loadCxplaces();
+    this.loadCxplacesBuy();
   }
 
-  
-
-
-  loadCxplaces = () => {
-    API.getCxplaces()
+  loadCxplacesBuy = () => {
+    API.getCxplacesBuy()
       .then(res => {
         this.setState({ cxplaces: res.data })
+      })
+      .catch(err => console.log(err));
+  }
+
+  loadCxplacesSell = () => {
+    API.getCxplacesSell()
+      .then(res => {
+        this.setState({cxplaces: res.data})
       })
       .catch(err => console.log(err));
   }
@@ -34,13 +44,33 @@ class CXPlaces extends Component {
   render() {
     return (
       <div>
-        <Link to={"/map/"}>
-          <Button className="mapButton">
-            <img className="mapIcon" src={require("../../utils/mapIcon.png")} alt="logo" />
-            <span className="mapFont">Map</span>
-          </Button>
-        </Link>
-        <ul className="fullList">
+        <div className="buttons">
+
+            <ButtonToolbar>
+              <DropdownButton
+                bsStyle = "default"
+                title="Sort by"
+                key="1"
+                id="dropdown-size-medium"
+              >
+                <MenuItem onClick={this.loadCxplacesBuy} eventKey="1">Buy</MenuItem>
+                <MenuItem onClick={this.loadCxplacesSell} eventKey="2">Sell</MenuItem>
+                <MenuItem eventKey="3">
+                  Distance
+                </MenuItem>
+              </DropdownButton>
+            </ButtonToolbar >
+
+
+            <Link to={"/map/"}>
+              <Button className="mapButton">
+                <img className="mapIcon" src={require("../../utils/mapIcon.png")} alt="logo" />
+                <span className="mapFont">Map</span>
+              </Button>
+            </Link>
+
+          </div>
+        <ul>
           {
             this.state.cxplaces.map((cxplace) => {
               return (
@@ -52,7 +82,7 @@ class CXPlaces extends Component {
                   cxplaceAddress={cxplace.address}
                   cxplaceBuy={cxplace.buy}
                   cxplaceSell={cxplace.sell}
-                  loadCxplaces={this.loadCxplaces}
+                  loadCxplacesBuy={this.loadCxplacesBuy}
                   cxplaceDate={cxplace.date}
                   cxplaceUser={cxplace.user}
                 />

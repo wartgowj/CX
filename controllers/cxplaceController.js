@@ -2,13 +2,21 @@ const db = require("../models");
 
 // Defining methods for the cxplacesController
 module.exports = {
-    findAll: function(req, res) {
+    findAllBuy: function(req, res) {
         db.Cxplace
             .find(req.query)
             .sort({ buy: 1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+    findAllSell: function (req, res) {
+        db.Cxplace
+            .find(req.query)
+            .sort({ sell: 1 })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+
     findById: function(req, res) {
         db.Cxplace
             .findById(req.params.id)

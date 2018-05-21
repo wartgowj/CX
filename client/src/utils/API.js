@@ -4,8 +4,12 @@ export default {
 //Functions that get/put/post from/to the database
 
 
-    getCxplaces: function () {
-        return axios.get("/api/cxplaces");
+    getCxplacesBuy: function () {
+        return axios.get("/api/cxplaces/buy");
+    },
+
+    getCxplacesSell: function () {
+        return axios.get("/api/cxplaces/sell");
     },
  
     getCxplace: function (id) {

@@ -17,7 +17,7 @@ export default class Map extends Component {
 
     componentDidMount() {
         this.getUserLocation();
-        this.loadCxplaces();
+        this.loadCxplacesBuy();
     }
 
     componentDidUpdate(){
@@ -31,8 +31,8 @@ export default class Map extends Component {
         })
     }
 
-    loadCxplaces = () => {
-        API.getCxplaces()
+    loadCxplacesBuy = () => {
+        API.getCxplacesBuy()
             .then(res =>
                 this.setState({ cxplaces: res.data })
             )

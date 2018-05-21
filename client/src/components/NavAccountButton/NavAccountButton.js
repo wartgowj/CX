@@ -26,9 +26,10 @@ class NavAccountButton extends Component {
     }
     render() {
         const { profile } = this.state;
+        const style = {
+            left: "-100px !important"
+        }
         return (
-        
-      
                 <DropdownButton
                     bsSize="xsmall"
                     title={
@@ -39,9 +40,9 @@ class NavAccountButton extends Component {
                     }
                     id="dropdown-size-extra-small"
                 >
-                    <MenuItem href="/profile" eventKey="1">Profile</MenuItem>
+                    <MenuItem  style={style} href="/profile" eventKey="1">Profile</MenuItem>
                     <MenuItem divider />
-                    <MenuItem onClick={this.props.logOut} eventKey="4">Log out</MenuItem>
+                    <MenuItem style={style} onClick={this.props.logOut} eventKey="4">Log out</MenuItem>
                 </DropdownButton>
            
            

@@ -6,12 +6,8 @@
         border-radius: 3px;
         width: 40px;
 }
-
-.dropdown-menu{
-	    left: -100px;
-}
 #dropdown-size-extra-small{
-	margin-left: 10px;
+	margin-left: 60px !important;
 	background-color: transparent;
     border-color: transparent;
 }
