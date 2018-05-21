@@ -43,10 +43,10 @@ class Detail extends Component {
 
 
   componentDidMount() {
-    this.getPlace();
+    this.loadCxplace();
   }
 
-  getPlace = () => {
+  loadCxplace = () => {
   API.getCxplace(this.props.match.params.id)
       .then(res => {
         this.setState({ cxplace: res.data, buy: "", sell: "", comments: "", user:""})
@@ -87,7 +87,7 @@ class Detail extends Component {
         date: Date.now()
        
       })
-        .then(res => this.getPlace())
+        .then(res => this.loadCxplace())
         .catch(err => console.log(err));
     }
 

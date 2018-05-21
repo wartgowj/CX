@@ -1,6 +1,4 @@
-
 .listBox{
- position: relative;
     background: #fff;
     -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
     box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
@@ -50,6 +48,13 @@ a {
 	width: 500px;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  right:20%;
+}
+
 .buyBox {
 	font-size: 18px;
     margin-top: 21px;
@@ -58,25 +63,13 @@ a {
     line-height: 1;
 
 }
-.fullList{
 
-}
 .buyGreen{
   color:#85bb65 ;
 }
 .sellRed{
   color:#c86b71;
 }
-.btn {
-    margin: 10px;
-    margin-left: 12px;
-}
-.btn-default {
-  background-color: white;
-
-}
-
-
 
 button.buyButton.btn.btn-default {
   margin-left: 14px;
@@ -85,6 +78,10 @@ button.buyButton.btn.btn-default {
 button.sellButton.btn.btn-default{
   margin-left:14px;
 
+}
+
+.btn-group>.btn:first-child {
+  color:#2c2c2c9e;
 }
 
 .buyButton{
@@ -112,21 +109,10 @@ button.sellButton.btn.btn-default{
 
 }
 
-.mapButton{
-    width: 9.5%;
-    height: 50%;
-    position: relative;
-    top: 0px;
-    bottom: 0;
-    left: 66%;
-    right: 0;
-    margin: 0 auto;
-    margin-top: 20px;
-    z-index: 1;
-    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-
-
+.dropdown-menu {
+  left: 0 !important;
 }
+
 .mapFont{
     margin-left: 5px;
     text-transform: none;
@@ -156,10 +142,7 @@ button.sellButton.btn.btn-default{
   .vertical_dotted_line {
     display: none;
   }
-  .mapButton{
-    left: 70%;
-    width:22%;
-  }
+
   .backButton{
     left: 70%;
     width: 20%;
@@ -189,9 +172,7 @@ button.sellButton.btn.btn-default{
       .list {
         width: 95%;
       }
-      .mapButton{
-        width: 24%;
-      }
+
       .listDetail{
             width: 84%!important;
       }
@@ -206,11 +187,7 @@ and (max-device-width : 1024px)  {
     width: 80%;
     margin: auto;
     }
-    .mapButton {
-      width: 10.5%;
-      left: 80%;
 
-    }
     a {
       width: inherit;
     }

@@ -68,7 +68,7 @@ class CXPlace extends Component {
 	)
 	  
 	  .then(res => {
-		  this.props.loadCxplaces();
+		  this.props.loadCxplacesBuy();
 		  this.setState({ sell: "" });
 	  })
 	
@@ -85,7 +85,7 @@ class CXPlace extends Component {
       })
       .then(res => {
 		  console.log(this.state.disabled);
-		  this.props.loadCxplaces();
+		  this.props.loadCxplacesBuy();
 		  this.setState({ buy: ""});
 	  })
       .catch(err => console.log(err));

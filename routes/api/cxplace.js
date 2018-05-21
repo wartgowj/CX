@@ -2,9 +2,14 @@ const router = require("express").Router();
 const cxplacesController = require("../../controllers/cxplaceController");
 
 // Matches with "/api/cxplaces"
-router.route("/")
-  .get(cxplacesController.findAll)
+router.route("/buy")
+  .get(cxplacesController.findAllBuy)
 
+router.route("/sell")
+  .get(cxplacesController.findAllSell)
+
+// router.route("/distance")
+//   .get(cxplacesController.findAllDistance)
   
 // Matches with "/api/cxplaces/:id"
 router
