@@ -37,6 +37,11 @@ a {
 
 
 }
+
+.distance{
+    color: #63666a;
+    margin-top: 1%;
+}
 .vertical_dotted_line
 {
     border-left: 1px dotted #999999;
