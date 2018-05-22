@@ -120,6 +120,7 @@ class CXPlace extends Component {
 	                <div className="nameContainer">
 	                    <h3 className="cxName">{this.props.cxplaceName}</h3>
 	                    <div className="address">{this.props.cxplaceAddress}</div>
+						<div className="distance">{this.props.cxplaceDistance}  miles</div>
 	                </div>
 	            </Link>
 	            <span className="vertical_dotted_line"></span>

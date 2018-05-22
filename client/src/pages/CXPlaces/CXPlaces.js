@@ -41,6 +41,15 @@ class CXPlaces extends Component {
       .catch(err => console.log(err));
   }
 
+  calulateDistance = (lat1, lon1, lat2, lon2) => {
+    let p = 0.017453292519943295;
+    let c = Math.cos;
+    let a = 0.5 - c((lat2 - lat1) * p) / 2 +
+      c(lat1 * p) * c(lat2 * p) *
+      (1 - c((lon2 - lon1) * p)) / 2;
+    return (12742 * Math.asin(Math.sqrt(a)))*0.621371;
+  }
+
   render() {
     return (
       <div>
@@ -80,6 +89,7 @@ class CXPlaces extends Component {
                   cxplaceId={cxplace._id}
                   cxplaceName={cxplace.name}
                   cxplaceAddress={cxplace.address}
+                  cxplaceDistance = {this.calulateDistance(cxplace.lat, cxplace.lng, sessionStorage.userLat, sessionStorage.userLng).toFixed(1)}
                   cxplaceBuy={cxplace.buy}
                   cxplaceSell={cxplace.sell}
                   loadCxplacesBuy={this.loadCxplacesBuy}
