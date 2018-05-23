@@ -14,7 +14,8 @@ import Profile from './pages/Profile';
 //import pages here: 
 import Detail from "./pages/Detail";
 import CXPlaces from "./pages/CXPlaces";
-import Nav from './components/Nav'
+import Nav from './components/Nav';
+import Footer from './components/Footer'
 
 
 
@@ -50,6 +51,7 @@ const makeMainRoutes = ({ children }) => {
             <Route exact path="/map" component={Map}/> 
             <Route component={NoMatch}/>
           </Switch>
+          <Footer/>
         </div>
       </Router>
   );

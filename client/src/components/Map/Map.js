@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import MAP from "../../services/Map";
 import ReactDOM from 'react-dom';
 import "./Map.css";
 import { Button } from "react-bootstrap";
@@ -16,7 +15,7 @@ export default class Map extends Component {
     };
 
     componentDidMount() {
-        this.getUserLocation();
+        this.setUserLocation();
         this.loadCxplacesBuy();
     }
 
@@ -24,11 +23,10 @@ export default class Map extends Component {
         this.loadMap();
     }
 
-    getUserLocation = () => {
-        MAP.getLocation((position) => {
-            this.setState({ userLat: position.coords.latitude });
-            this.setState({ userLng: position.coords.longitude });
-        })
+    setUserLocation = () => {
+            this.setState({ userLat: parseFloat(sessionStorage.userLat) });
+            this.setState({ userLng: parseFloat(sessionStorage.userLng) });
+
     }
 
     loadCxplacesBuy = () => {
@@ -108,7 +106,7 @@ export default class Map extends Component {
                     <span className="backFont">List</span>
                 </Button>
             </Link>
-                <div ref="map" style={style}></div>
+                <div className='map' ref="map" style={style}></div>
             </div>
         )
     }
