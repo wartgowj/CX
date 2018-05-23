@@ -30,7 +30,7 @@ const handleAuthentication = ({location}) => {
 const makeMainRoutes = ({ children }) => {
   return (
       <Router history={history}>
-        <div>
+        <div className>
           <Nav auth={auth} />
     
           <Switch>
