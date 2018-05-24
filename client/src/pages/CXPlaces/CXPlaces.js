@@ -9,6 +9,8 @@ import {
   MenuItem,
   ButtonToolbar
 } from "react-bootstrap";
+import sortByDistance from 'sort-by-distance';
+
 
 class CXPlaces extends Component {
     state = {
@@ -41,6 +43,43 @@ class CXPlaces extends Component {
       .catch(err => console.log(err));
   }
 
+
+  loadByDistance = () => {
+    const points = [];
+    const origin = {
+      x: sessionStorage.userLat,
+      y: sessionStorage.userLng
+    }
+    API.getCxplacesDistance()
+      .then(res => {
+        res.data.forEach((item,index) => {
+          points.push({
+            x: item.lat,
+            y: item.lng,
+            _id: item._id,
+            name: item.name,
+            address: item.address,
+            buy: item.buy,
+            sell: item.sell,
+            date: item.date,
+            user: item.user
+          })
+          
+        })
+       
+      })
+      .then(res => {
+        const sortedDistances = sortByDistance(origin, points);
+        this.setState({
+          cxplaces: sortedDistances
+        })
+      })
+      .then(res => {
+        console.log(this.state.cxplaces)
+      })
+   
+  }
+
   calulateDistance = (lat1, lon1, lat2, lon2) => {
     let p = 0.017453292519943295;
     let c = Math.cos;
@@ -64,12 +103,9 @@ class CXPlaces extends Component {
               >
                 <MenuItem onClick={this.loadCxplacesBuy} eventKey="1">Buy</MenuItem>
                 <MenuItem onClick={this.loadCxplacesSell} eventKey="2">Sell</MenuItem>
-                <MenuItem eventKey="3">
-                  Distance
-                </MenuItem>
+                <MenuItem onClick={this.loadByDistance} eventKey="3">Distance</MenuItem>
               </DropdownButton>
             </ButtonToolbar >
-
 
             <Link to={"/map/"}>
               <Button className="mapButton">
@@ -89,7 +125,7 @@ class CXPlaces extends Component {
                   cxplaceId={cxplace._id}
                   cxplaceName={cxplace.name}
                   cxplaceAddress={cxplace.address}
-                  cxplaceDistance = {this.calulateDistance(cxplace.lat, cxplace.lng, sessionStorage.userLat, sessionStorage.userLng).toFixed(1)}
+                  cxplaceDistance = {this.calulateDistance(cxplace.lat || cxplace.x, cxplace.lng || cxplace.y, sessionStorage.userLat, sessionStorage.userLng).toFixed(1)}
                   cxplaceBuy={cxplace.buy}
                   cxplaceSell={cxplace.sell}
                   loadCxplacesBuy={this.loadCxplacesBuy}

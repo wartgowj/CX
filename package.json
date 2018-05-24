@@ -28,6 +28,7 @@
     "google-maps-react": "^2.0.0",
     "mongoose": "^4.11.7",
     "react-bootstrap": "^0.32.1",
-    "remove": "^0.1.5"
+    "remove": "^0.1.5",
+    "sort-by-distance": "^1.0.0"
   }
 }

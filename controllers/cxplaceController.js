@@ -2,6 +2,12 @@ const db = require("../models");
 
 // Defining methods for the cxplacesController
 module.exports = {
+    findAllDistance: function (req, res) {
+        db.Cxplace
+            .find(req.query)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
     findAllBuy: function(req, res) {
         db.Cxplace
             .find(req.query)

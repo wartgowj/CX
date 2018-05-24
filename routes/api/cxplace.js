@@ -8,8 +8,8 @@ router.route("/buy")
 router.route("/sell")
   .get(cxplacesController.findAllSell)
 
-// router.route("/distance")
-//   .get(cxplacesController.findAllDistance)
+router.route("/distance")
+  .get(cxplacesController.findAllDistance)
   
 // Matches with "/api/cxplaces/:id"
 router

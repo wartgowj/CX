@@ -3,7 +3,9 @@ import axios from "axios";
 export default {
 //Functions that get/put/post from/to the database
 
-
+    getCxplacesDistance: function () {
+        return axios.get("/api/cxplaces/distance");
+    },
     getCxplacesBuy: function () {
         return axios.get("/api/cxplaces/buy");
     },
