@@ -6452,6 +6452,10 @@ sockjs@0.3.18:
     faye-websocket "^0.10.0"
     uuid "^2.0.2"
 
+sort-by-distance@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/sort-by-distance/-/sort-by-distance-1.0.0.tgz#42868deb826296f531da02028d94f43d0a62b9bd"
+
 sort-keys@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/sort-keys/-/sort-keys-1.1.2.tgz#441b6d4d346798f1b4e49e8920adfba0e543f9ad"
