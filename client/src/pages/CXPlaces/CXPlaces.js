@@ -14,7 +14,10 @@ import sortByDistance from 'sort-by-distance';
 
 class CXPlaces extends Component {
     state = {
-      cxplaces: []
+      cxplaces: [],
+      byBuy: false,
+      bySell: false,
+      byDistance: true
     };
 
 
@@ -24,13 +27,18 @@ class CXPlaces extends Component {
   }
 
   componentWillMount() {
-    this.loadCxplacesBuy();
+    this.loadByDistance();
   }
 
   loadCxplacesBuy = () => {
     API.getCxplacesBuy()
       .then(res => {
-        this.setState({ cxplaces: res.data })
+        this.setState({
+          cxplaces: res.data,
+          byBuy: true,
+          bySell: false,
+          byDistance: false
+        })
       })
       .catch(err => console.log(err));
   }
@@ -38,7 +46,12 @@ class CXPlaces extends Component {
   loadCxplacesSell = () => {
     API.getCxplacesSell()
       .then(res => {
-        this.setState({cxplaces: res.data})
+        this.setState({
+          cxplaces: res.data,
+          byBuy: false,
+          bySell: true,
+          byDistance: false
+        })
       })
       .catch(err => console.log(err));
   }
@@ -71,7 +84,10 @@ class CXPlaces extends Component {
       .then(res => {
         const sortedDistances = sortByDistance(origin, points);
         this.setState({
-          cxplaces: sortedDistances
+          cxplaces: sortedDistances, 
+          byBuy: false,
+          bySell: false,
+          byDistance: true
         })
       })
       .then(res => {
@@ -91,7 +107,7 @@ class CXPlaces extends Component {
 
   render() {
     return (
-      <div>
+      <div className="cxplaceContainer">
         <div className="buttons">
 
             <ButtonToolbar>
@@ -129,6 +145,11 @@ class CXPlaces extends Component {
                   cxplaceBuy={cxplace.buy}
                   cxplaceSell={cxplace.sell}
                   loadCxplacesBuy={this.loadCxplacesBuy}
+                  loadCxplacesSell={this.loadCxplacesSell}
+                  loadCxplacesDistance={this.loadByDistance}
+                  byBuy={this.state.byBuy}
+                  bySell={this.state.bySell}
+                  byDistance={this.state.byDistance}
                   cxplaceDate={cxplace.date}
                   cxplaceUser={cxplace.user}
                 />

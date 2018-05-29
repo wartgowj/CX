@@ -68,7 +68,13 @@ class CXPlace extends Component {
 	)
 	  
 	  .then(res => {
-		  this.props.loadCxplacesBuy();
+		  if (this.props.byBuy) {
+			  this.props.loadCxplacesBuy();
+		  } else if (this.props.bySell) {
+			  this.props.loadCxplacesSell();
+		  } else if (this.props.byDistance) {
+			  this.props.loadCxplacesDistance();
+		  }
 		  this.setState({ sell: "" });
 	  })
 	
@@ -84,8 +90,13 @@ class CXPlace extends Component {
 		date: Date.now()
       })
       .then(res => {
-		  console.log(this.state.disabled);
-		  this.props.loadCxplacesBuy();
+		if (this.props.byBuy) {
+			this.props.loadCxplacesBuy();
+		} else if (this.props.bySell) {
+			this.props.loadCxplacesSell();
+		} else if (this.props.byDistance) {
+			this.props.loadCxplacesDistance();
+		}
 		  this.setState({ buy: ""});
 	  })
       .catch(err => console.log(err));
