@@ -53,8 +53,10 @@ a {
 }
 
 .buttons {
+  width:58.7%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 21.7%;
 }
 
 .cxplaceContainer {
@@ -170,6 +172,10 @@ button.sellButton.btn.btn-default{
   .nameContainer{
     width:320px;
   }
+  .buttons {
+    width: 85%;
+    margin-left: 7.5%;
+  }
 }
 /*iphone X*/
 @media only screen 
@@ -181,7 +187,7 @@ button.sellButton.btn.btn-default{
       }
 
       .listDetail{
-            width: 84%!important;
+            width: 84%!important; 
       }
       
 }
